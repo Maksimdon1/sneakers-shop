@@ -23,11 +23,19 @@ export default function Sneakers() {
   )
   useEffect(() => {
 
-    const el =  document.getElementById(window.location.hash.slice(1))
+    const el =  localStorage.getItem('pageYOffset')
 
     
-    window.scrollTo({ top: window.pageYOffset + el.getBoundingClientRect().top   - 70, behavior: 'smooth'});
+    window.scrollTo({ top: el, behavior: 'smooth'});
   }, []);
+
+
+
+
+  window.addEventListener("beforeunload", (event) => {
+    localStorage.setItem("pageYOffset", window.pageYOffset)
+    console.log("API call before page reload");
+});
  useEffect(() => {
 
   // При перерисовке страницы, вызываем функцию для скрола вверх
@@ -192,7 +200,7 @@ function voidBottomPanel(props){
 
      {snekers.slice(0,50).map((img, key) => (
       <>
-      <Link to={`/product/sneakers/${img["unique_code"]}`} onClick={()=>{history(`/catalog#${img['Id']}`)  }}>
+      <Link to={`/product/sneakers/${img["unique_code"]}`} onClick={()=>{    localStorage.setItem("pageYOffset", window.pageYOffset)  }}>
        <div
         key={key}
         className="item"
