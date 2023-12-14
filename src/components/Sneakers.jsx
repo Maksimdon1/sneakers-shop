@@ -13,6 +13,7 @@ import * as types from '../store/types'
 
 
 export default function Sneakers() {
+  const [pageYOffset, SetpageYOffset] = useState(localStorage.getItem('pageYOffset'))
   const [ShowBottomPanel, SetShowBottomPanel] = useState(false)
   const [ShowBottomPanelData, SetShowBottomPanelData] = useState()
   const history = useNavigate();
@@ -21,16 +22,16 @@ export default function Sneakers() {
   const path = useSelector(
     state => state.PathReducer
   )
-  if(localStorage.getItem('pageYOffset')){
-    window.scrollTo({ top: localStorage.getItem('pageYOffset')});
+  if(pageYOffset){
+    window.scrollTo({ top: pageYOffset});
   }
   useEffect(() => {
 
-    const el =  localStorage.getItem('pageYOffset')
+
 
     
-    window.scrollTo({ top: el});
-  }, [localStorage.getItem('pageYOffset')]);
+    window.scrollTo({ top: pageYOffset});
+  }, [pageYOffset]);
 
 
 
