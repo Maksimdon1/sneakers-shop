@@ -308,9 +308,11 @@ require('../sneakers.json').goods.forEach((element) => {
           </svg>
          )}
         </div>
-        <img src={require(`../static-img/img/${img.unique_code}/1.jpg`)} alt="" onClick={()=>{    localStorage.setItem("pageYOffset", window.pageYOffset)  }} />
+        <img src={require(`../static-img/img/${img.unique_code}/1.jpg`)} alt=""/>
 
-        <div className="card" onClick={()=>{    localStorage.setItem("pageYOffset", window.pageYOffset)  }}>
+        <div className="card"
+        //  onClick={()=>{    localStorage.setItem("pageYOffset", window.pageYOffset)  }}
+         >
 
       
            <div className="price">
