@@ -13,11 +13,12 @@ import * as types from '../store/types'
 
 
 export default function Sneakers() {
+  const [sneakers, SetSneakers] = useState(data)
   const [pageYOffset, SetpageYOffset] = useState(localStorage.getItem('pageYOffset'))
   const [ShowBottomPanel, SetShowBottomPanel] = useState(false)
   const [ShowBottomPanelData, SetShowBottomPanelData] = useState()
-  const history = useNavigate();
- const [list, setList] = useState(data);
+
+
  const dispatch = useDispatch()
   const path = useSelector(
     state => state.PathReducer
@@ -38,10 +39,11 @@ export default function Sneakers() {
 
 
  useEffect(() => {
+  SetSneakers(data)
 
   // При перерисовке страницы, вызываем функцию для скрола вверх
  // window.scrollTo(0, 0);
-  setList(data)
+
   dispatch({
     type: types.PATH_NEW,
     payload: [{'path': '/', 'title': 'главная'},{'path': '/catalog', 'title': 'каталог'} ],
@@ -53,7 +55,7 @@ export default function Sneakers() {
       payload: 'catalog',
     })
 },[]);
-const [snekers, SetSneakers] = useState(require('../sneakers.json').goods)
+
 
 
 function voidBottomPanel(props){
@@ -74,14 +76,14 @@ function voidBottomPanel(props){
   if(JSON.parse(localStorage.getItem("like")) == null){
     localStorage.setItem("like", JSON.stringify([]));
   }
-  const array = require("../flowers.json");
+
   let arr = [];
 
   const liked = JSON.parse(localStorage.getItem("like"));
 
 
-  array['products'].forEach((element) => {
-    if(liked.includes(element['unique-url'])){
+require('../sneakers.json').goods.forEach((element) => {
+    if(liked.includes(element['unique_code'])){
       element.like = true
     }
     else{
@@ -89,9 +91,35 @@ function voidBottomPanel(props){
   }
    arr.push(element);
   });
+
   return arr;
+
  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  function add_To_Like(id) {
+  console.log(sneakers)
+  console.log(id)
 
   
   // localStorage.setItem('like',JSON.stringify([]) )
@@ -113,36 +141,57 @@ function voidBottomPanel(props){
 
   }
 
-  let arr = list;
+  let arr = sneakers;
 
-  const data = arr.map((el) => {
-   if (el.Id === id) {
+   arr.map((el) => {
+   if (el.unique_code === id) {
     el.like = !el.like;
-    addToLocal(el["unique-url"]);
+    addToLocal(el["unique_code"]);
+    gsap.from(`#like-${el.Id} `, {
+
+  
+      duration: 2,
+      scale: 0.5, 
+      opacity: 0.3, 
+       
+      stagger: 0.1,
+      ease: "elastic", 
+      force3D: true
+        
+    
+    
+      });
    }
    return el;
   });
-
-  setList(data);
-
+  console.log(id)
 
 
 
-  gsap.from(`#like-${id} `, {
 
-  
-    duration: 2,
-    scale: 0.5, 
-    opacity: 0.3, 
-     
-    stagger: 0.1,
-    ease: "elastic", 
-    force3D: true
-      
-  
-  
-    });
+
+
+    SetSneakers(data)
  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
  const showImage = () => {
   document.getElementById("katalog-all").style.display = "grid"
@@ -199,9 +248,9 @@ function voidBottomPanel(props){
      }}
     >
 
-     {snekers.slice(0,50).map((img, key) => (
+     {sneakers.slice(0,50).map((img, key) => (
       <>
-      <Link to={`/product/sneakers/${img["unique_code"]}`} onClick={()=>{    localStorage.setItem("pageYOffset", window.pageYOffset)  }}>
+      <Link to={`/product/sneakers/${img["unique_code"]}`} >
        <div
         key={key}
         className="item"
@@ -214,7 +263,7 @@ function voidBottomPanel(props){
          className="like"
          onClick={(el) => {
           el.preventDefault();
-          add_To_Like(img.Id);
+          add_To_Like(img['unique_code']);
          }}
         >
          {img.like ? (
@@ -259,9 +308,9 @@ function voidBottomPanel(props){
           </svg>
          )}
         </div>
-        <img src={require(`../static-img/img/${img.unique_code}/1.jpg`)} alt="" />
+        <img src={require(`../static-img/img/${img.unique_code}/1.jpg`)} alt="" onClick={()=>{    localStorage.setItem("pageYOffset", window.pageYOffset)  }} />
 
-        <div className="card">
+        <div className="card" onClick={()=>{    localStorage.setItem("pageYOffset", window.pageYOffset)  }}>
 
       
            <div className="price">
