@@ -21,8 +21,15 @@ export default function Sneakers() {
   const path = useSelector(
     state => state.PathReducer
   )
-  console.log(path)
+  useEffect(() => {
+
+    const el =  document.getElementById(window.location.hash.slice(1))
+
+    
+    window.scrollTo({ top: window.pageYOffset + el.getBoundingClientRect().top   - 70, behavior: 'smooth'});
+  }, []);
  useEffect(() => {
+
   // При перерисовке страницы, вызываем функцию для скрола вверх
  // window.scrollTo(0, 0);
   setList(data)
@@ -36,14 +43,9 @@ export default function Sneakers() {
       type: types.SET_MAIN_PATH,
       payload: 'catalog',
     })
-    
-
-
-
-  
 },[]);
 const [snekers, SetSneakers] = useState(require('../sneakers.json').goods)
-console.log(snekers)
+
 
 function voidBottomPanel(props){
   if(!ShowBottomPanel){
