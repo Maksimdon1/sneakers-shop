@@ -1,0 +1,56 @@
+.edit-page{
+    background-color: #F7F8FA;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 50px 90px 50px;
+    height: auto;
+    min-height: 100vh;
+    margin: 0 !important;
+}
+.edit-page .input-container{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.edit-page input[type="email"], .edit-page input[type="password"], .edit-page input[type="text"] {
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    border: 1.5px solid #DCDCDC;
+    outline: white;
+    padding: 14px;
+    height: 32px;
+    border-radius: 6px;
+}
+.save-btn{
+    box-shadow: none;
+    width: 80%;
+    border-radius: 8px;
+    padding:6px 10px 6px 10px;
+
+    display: flex;
+    justify-content: center;
+    font-size: clamp(8px, 4vw, 22px);
+    font-weight: 600;
+    font-family: 'Rubik', sans-serif;
+    background-color: #857c7c;
+    margin-right: auto;
+    margin-left: auto;
+}
+.save-btn.active{
+    width: 80%;
+    border-radius: 8px;
+    padding:6px 10px 6px 10px;
+
+    display: flex;
+    justify-content: center;
+    font-size: clamp(8px, 4vw, 22px);
+    font-weight: 600;
+    font-family: 'Rubik', sans-serif;
+    background-color: #18b201;
+    margin-right: auto;
+    margin-left: auto;
+}

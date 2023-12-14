@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,500&display=swap');
+
+.infoComponent div .info{
+    
+    width: calc(84% - 26px);
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+
+}
+.infoComponent{
+    margin-top: 20px;
+}
+div.closing{
+
+    animation: closing-info-component 2s  ;
+    
+
+}
+@keyframes closing-info-component {
+    from {
+      opacity:  1;
+    }
+    to {
+      
+        opacity:  0;
+        
+      
+    }
+    }
+.infoComponent div .close:after {
+
+    content: '';
+    position: absolute;
+    inset: -10px;
+}
+.infoComponent div .close svg{
+    width: 16px;
+    height: 16px;
+
+}
+.infoComponent div .close {
+    width: auto;
+    height: calc(100% );   
+
+    position: relative;
+    top: -2px;
+    left: calc(96% + 1px);
+   display: flex;
+    cursor: pointer;
+}
+.infoComponent div .info .title-big{
+    font-size: 18px;
+    margin-bottom: 5px;
+
+
+
+}
+.infoComponent div .info .title-small{
+    font-size: 14px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 500;
+
+
+}
+
+.infoComponent div .icon{
+    display: flex;
+    width: 16%;
+    justify-content: flex-start;
+   
+
+}
+
+.infoComponent div .icon img{
+    transform: rotate3d(0,1,0,20deg);
+
+    width: clamp(11vw, 6vw, 20vw);
+
+    height: auto ;
+    float: right;
+ 
+}
+
+.infoComponent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    width: 100%;
+
+
+}
+.delivery-component {
+    background-color: #57BAE4;
+    border-radius: 5px;
+    padding: 5px 10px 0px 5px;
+    display: flex;
+    margin-bottom: 20px;
+    width: 100%;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding :10px;
+}
+.quality-component {
+    background-color: #FFC33E;
+    border-radius: 5px;
+    padding: 5px 10px 0px 5px;
+    display: flex;
+    margin-bottom: 20px;
+    width: 100%;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding :10px;
+}
+.cashback-component {
+    background-color: #FF357E;
+    border-radius: 5px;
+    padding: 5px 10px 0px 5px;
+    display: flex;
+    margin-bottom: 20px;
+    width: 100%;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding :10px;
+}

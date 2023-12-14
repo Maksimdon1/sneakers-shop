@@ -1,0 +1,852 @@
+@media (min-width: 1000px ) and (max-width: 1600px){
+.login {
+
+    
+  position: fixed;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  width: 40%;
+  height: auto;
+  min-height: 25%;
+  border-radius: 20px;
+  padding-right: 60px ;
+  padding-left: 60px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: #F8F9F9;
+  z-index: 1000;
+  box-shadow: 5px 4px 8px 0px rgba(0,0,0,.20);
+}
+
+.login .header {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+
+.login .log-in {
+  margin: 0;
+  position: relative;
+  font-size: 16px;
+  font-weight: 300;
+  cursor: pointer;
+}
+.login .sing-in{
+  margin: 0;
+  position: relative;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+
+  
+
+}
+.login .close-login{
+  transform: translate(-50%, -50%);
+  position: relative;
+  top: 10px;
+  left: calc(100% - -25px);
+  width: 20px;
+  height: 20px;
+  color: black;
+  margin-bottom:10px ;
+  cursor: pointer;
+
+}
+.login  .close-login img{
+
+  opacity: 0.6;
+  width: 16px;
+  height: 16px;
+}
+
+
+
+.login input[type="email"],
+.login input[type="password"],
+.login input[type="text"] {
+font-family:sans-serif;
+letter-spacing: 1px;
+border: 1.5px solid   #DCDCDC;
+outline: white;
+
+padding: 14px;
+
+
+height: 32px;
+
+border-radius: 6px;
+}
+.login input[type="email"]{
+font-size: 16px;
+font-weight: 400;
+}
+.login input[type="password"]{
+font-size: medium;
+}
+.login input[type="email"]:not(:invalid),
+.login input[type="password"]:not(:invalid),
+.login input[type="text"]:not(:invalid){
+font-family:sans-serif;
+letter-spacing: 1px;
+height: 32px;
+border: 1.5px solid   #DCDCDC;
+border-radius: 6px;
+}
+
+.login input:invalid:not(:default) {
+  /*border: 1.5px solid rgb(143, 4, 4);*/
+}
+
+.login input[type="email"]:default,
+.login input[type="password"]:default,
+.login input[type="text"]:default{
+font-family:sans-serif;
+letter-spacing: 1px;
+height: 32px;
+border: 1.5px solid #000000;
+border-radius: 6px;
+}
+.login input:invalid +  .login-btn {
+  background: #919292;
+}
+.login .login-btn {
+margin-top: 10px;
+cursor: pointer;
+font-size: 16px;
+background: #01d28e;
+border: 1px solid #01d28e;
+color: #fff;
+padding: 10px 20px;
+border-radius: 5px;
+}
+
+
+.login .login-btn:hover {
+background: #6cf0c2;
+}
+
+.login .button-container {
+display: flex;
+justify-content: center;
+}
+
+
+
+.login .list-container {
+display: flex;
+}
+
+
+.login .title {
+font-size: 25px;
+margin-bottom: 20px;
+}
+
+.login .input-container {
+display: flex;
+flex-direction: column;
+gap: 4px;
+
+margin-top: 10px;
+margin-bottom: 10px;
+}
+
+
+
+
+/* для элемента input c type="checkbox" */
+.custom-checkbox {
+position: absolute;
+z-index: -1;
+opacity: 0;
+}
+
+/* для элемента label, связанного с .custom-checkbox */
+.custom-checkbox+label {
+display: inline-flex;
+align-items: center;
+user-select: none;
+}
+
+/* создание в label псевдоэлемента before со следующими стилями */
+.custom-checkbox+label::before {
+content: '';
+display: inline-block;
+width: 1em;
+height: 1em;
+flex-shrink: 0;
+flex-grow: 0;
+border: 1px solid #adb5bd;
+border-radius: 0.25em;
+margin-right: 0.5em;
+background-repeat: no-repeat;
+background-position: center center;
+background-size: 50% 50%;
+}
+
+/* стили при наведении курсора на checkbox */
+.custom-checkbox:not(:disabled):not(:checked)+label:hover::before {
+border-color: #b3d7ff;
+}
+
+/* стили для активного чекбокса (при нажатии на него) */
+.custom-checkbox:not(:disabled):active+label::before {
+background-color: #b3d7ff;
+border-color: #b3d7ff;
+}
+
+/* стили для чекбокса, находящегося в фокусе */
+.custom-checkbox:focus+label::before {
+box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* стили для чекбокса, находящегося в фокусе и не находящегося в состоянии checked */
+.custom-checkbox:focus:not(:checked)+label::before {
+border-color: #80bdff;
+}
+
+/* стили для чекбокса, находящегося в состоянии checked */
+.custom-checkbox:checked+label::before {
+border-color: #0b76ef;
+background-color: #0b76ef;
+background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+}
+
+/* стили для чекбокса, находящегося в состоянии disabled */
+.custom-checkbox:disabled+label::before {
+background-color: #e9ecef;
+}
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=Roboto:ital,wght@0,200;0,400;0,500;1,300;1,400&display=swap');
+.google-btn {
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 3px 3px 4px 1px rgba(0,0,0,.25);
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: min-content;
+  padding: 2px 5px 2px 5px;
+  margin: auto;
+  margin-top: 20px;
+}
+  .google-icon-wrapper {
+    width: 40px;
+    height: 40px;
+    border-radius: 2px;
+
+  }
+  .google-icon {
+
+    margin-top: 11px;
+    margin-left: 5px;
+  
+    width: 18px;
+    height: 18px;
+  }
+  .btn-text {
+    color: #3B4045;
+    font-size: 13px;
+    letter-spacing: 0.2px;
+    font-family: "Roboto";
+    white-space: nowrap;
+    font-weight: 200;
+    border-radius:5px;
+
+  }
+
+
+
+}
+@media (min-width: 724px ) and (max-width: 999px){
+  .login {
+  
+      
+    position: fixed;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    width: 40%;
+    height: auto;
+    min-height: 25%;
+    border-radius: 20px;
+    padding-right: 60px ;
+    padding-left: 60px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: #F8F9F9;
+    z-index: 1000;
+    box-shadow: 5px 4px 8px 0px rgba(0,0,0,.20);
+  }
+  
+  .login .header {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+  
+  
+  .login .log-in {
+    margin: 0;
+    position: relative;
+    font-size: 16px;
+    font-weight: 300;
+    cursor: pointer;
+  }
+  .login .sing-in{
+    margin: 0;
+    position: relative;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+  
+    
+  
+  }
+  .login .close-login{
+    transform: translate(-50%, -50%);
+    position: relative;
+    top: 10px;
+    left: calc(100% - -25px);
+    width: 20px;
+    height: 20px;
+    color: black;
+    margin-bottom:10px ;
+    cursor: pointer;
+  
+  }
+  .login  .close-login img{
+  
+    opacity: 0.6;
+    width: 16px;
+    height: 16px;
+  }
+  
+  
+  
+  .login input[type="email"],
+  .login input[type="password"],
+  .login input[type="text"] {
+  font-family:sans-serif;
+  letter-spacing: 1px;
+  border: 1.5px solid   #DCDCDC;
+  outline: white;
+  
+  padding: 14px;
+  
+  
+  height: 32px;
+  
+  border-radius: 6px;
+  }
+  .login input[type="email"]{
+  font-size: 16px;
+  font-weight: 400;
+  }
+  .login input[type="password"]{
+  font-size: medium;
+  }
+  .login input[type="email"]:not(:invalid),
+  .login input[type="password"]:not(:invalid),
+  .login input[type="text"]:not(:invalid){
+  font-family:sans-serif;
+  letter-spacing: 1px;
+  height: 32px;
+  border: 1.5px solid   #DCDCDC;
+  border-radius: 6px;
+  }
+  
+  .login input:invalid:not(:default) {
+    /*border: 1.5px solid rgb(143, 4, 4);*/
+  }
+  
+  .login input[type="email"]:default,
+  .login input[type="password"]:default,
+  .login input[type="text"]:default{
+  font-family:sans-serif;
+  letter-spacing: 1px;
+  height: 32px;
+  border: 1.5px solid #000000;
+  border-radius: 6px;
+  }
+  .login input:invalid +  .login-btn {
+    background: #919292;
+  }
+  .login .login-btn {
+  margin-top: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  background: #01d28e;
+  border: 1px solid #01d28e;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  }
+  
+  
+  .login .login-btn:hover {
+  background: #6cf0c2;
+  }
+  
+  .login .button-container {
+  display: flex;
+  justify-content: center;
+  }
+  
+  
+  
+  .login .list-container {
+  display: flex;
+  }
+  
+  
+  .login .title {
+  font-size: 25px;
+  margin-bottom: 20px;
+  }
+  
+  .login .input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  
+  margin-top: 10px;
+  margin-bottom: 10px;
+  }
+  
+  
+  
+  
+  /* для элемента input c type="checkbox" */
+  .custom-checkbox {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  }
+  
+  /* для элемента label, связанного с .custom-checkbox */
+  .custom-checkbox+label {
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+  }
+  
+  /* создание в label псевдоэлемента before со следующими стилями */
+  .custom-checkbox+label::before {
+  content: '';
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: 1px solid #adb5bd;
+  border-radius: 0.25em;
+  margin-right: 0.5em;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+  }
+  
+  /* стили при наведении курсора на checkbox */
+  .custom-checkbox:not(:disabled):not(:checked)+label:hover::before {
+  border-color: #b3d7ff;
+  }
+  
+  /* стили для активного чекбокса (при нажатии на него) */
+  .custom-checkbox:not(:disabled):active+label::before {
+  background-color: #b3d7ff;
+  border-color: #b3d7ff;
+  }
+  
+  /* стили для чекбокса, находящегося в фокусе */
+  .custom-checkbox:focus+label::before {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+  
+  /* стили для чекбокса, находящегося в фокусе и не находящегося в состоянии checked */
+  .custom-checkbox:focus:not(:checked)+label::before {
+  border-color: #80bdff;
+  }
+  
+  /* стили для чекбокса, находящегося в состоянии checked */
+  .custom-checkbox:checked+label::before {
+  border-color: #0b76ef;
+  background-color: #0b76ef;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+  }
+  
+  /* стили для чекбокса, находящегося в состоянии disabled */
+  .custom-checkbox:disabled+label::before {
+  background-color: #e9ecef;
+  }
+  
+  
+  
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=Roboto:ital,wght@0,200;0,400;0,500;1,300;1,400&display=swap');
+  .google-btn {
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 3px 3px 4px 1px rgba(0,0,0,.25);
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: min-content;
+    padding: 2px 5px 2px 5px;
+    margin: auto;
+    margin-top: 20px;
+  }
+    .google-icon-wrapper {
+      width: 40px;
+      height: 40px;
+      border-radius: 2px;
+  
+    }
+    .google-icon {
+  
+      margin-top: 11px;
+      margin-left: 5px;
+    
+      width: 18px;
+      height: 18px;
+    }
+    .btn-text {
+      color: #3B4045;
+      font-size: 13px;
+      letter-spacing: 0.2px;
+      font-family: "Roboto";
+      white-space: nowrap;
+      font-weight: 200;
+      border-radius:5px;
+  
+    }
+  
+  
+  
+}
+@media (min-width: 320px ) and (max-width: 723px){
+
+
+
+.login {
+  animation: createBox 1.5s  ;
+  position: fixed;
+  bottom: 62px;
+  width: 100vw;
+
+
+  border-radius: 40px 40px 0 0;
+
+  background-color: #F8F9F9;
+
+  box-shadow: 0px -4px 2px 0px rgba(0,0,0,.20);
+
+  padding: 40px   60px 0px 60px;
+
+  z-index: 190;
+
+
+}
+@keyframes createBox {
+from {
+  height: 0px;
+}
+to {
+  height: auto;
+}
+}
+.login.close{
+  animation: closeLogin 1.5s  ;
+ 
+ display: none;
+
+  
+
+}
+@keyframes closeLogin {
+  from {
+    height: 60%;
+    display: block;
+    bottom: 0px;
+  }
+  to {
+    height: 0px;
+    bottom: -100px;
+    display: none;
+  }
+  }
+
+.form .line{
+  background-color: rgb(144, 143, 143);
+  height: 4px;
+  width: 45%;
+  margin: auto;
+  margin-bottom: 20px;
+  border-radius: 40px;
+
+  bottom: 20px;
+  position: relative;
+  
+}
+.form .line::before{
+  position: absolute;
+  content: '';
+  top: -15px;
+  right: -100%;
+  left:-100%;
+  bottom: -15px;
+}
+
+.login .header {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  padding: 0;
+  background-color: #F8F9F9;
+}
+
+
+.login .log-in {
+  margin: 0;
+  position: relative;
+  font-size: clamp(0.3rem,5vw, 4rem);
+  font-weight: 300;
+  cursor: pointer;
+}
+.login .sing-in{
+  margin: 0;
+  position: relative;
+  font-size: clamp(0.5rem,5.1vw, 4rem);
+  font-weight: 600;
+  cursor: pointer;
+
+  
+
+}
+
+.login .close-login{
+display: none;
+
+}
+.login  .close-login img{
+
+  opacity: 0.6;
+  width: 16px;
+  height: 16px;
+}
+
+
+
+.login input[type="email"],
+.login input[type="password"],
+.login input[type="text"] {
+font-family:sans-serif;
+letter-spacing: 1px;
+border: 1.5px solid   #DCDCDC;
+outline: white;
+
+padding: 14px;
+
+
+height: 32px;
+
+border-radius: 6px;
+}
+.login input[type="email"]{
+font-size: 16px;
+font-weight: 400;
+}
+.login input[type="password"]{
+font-size: medium;
+}
+.login input[type="email"]:not(:invalid),
+.login input[type="password"]:not(:invalid),
+.login input[type="text"]:not(:invalid){
+font-family:sans-serif;
+letter-spacing: 1px;
+height: 32px;
+border: 1.5px solid   #DCDCDC;
+border-radius: 6px;
+}
+
+.login input:invalid:not(:default) {
+  /*border: 1.5px solid rgb(143, 4, 4);*/
+}
+
+.login input[type="email"]:default,
+.login input[type="password"]:default,
+.login input[type="text"]:default{
+font-family:sans-serif;
+letter-spacing: 1px;
+height: 32px;
+border: 1.5px solid #000000;
+border-radius: 6px;
+}
+.login input:invalid +  .login-btn {
+  background: #919292;
+}
+.login .login-btn {
+margin-top: 10px;
+cursor: pointer;
+font-size: 16px;
+background: #01d28e;
+border: 1px solid #01d28e;
+color: #fff;
+padding: 10px 20px;
+border-radius: 5px;
+}
+
+
+.login .login-btn:hover {
+background: #6cf0c2;
+}
+
+.login .button-container {
+display: flex;
+justify-content: center;
+}
+
+
+
+.login .list-container {
+display: flex;
+}
+
+
+.login .title {
+font-size: 25px;
+margin-bottom: 20px;
+}
+
+.login .input-container {
+display: flex;
+flex-direction: column;
+gap: 4px;
+
+margin-top: 10px;
+margin-bottom: 10px;
+}
+
+
+
+
+/* для элемента input c type="checkbox" */
+.custom-checkbox {
+position: absolute;
+z-index: -1;
+opacity: 0;
+}
+
+/* для элемента label, связанного с .custom-checkbox */
+.custom-checkbox+label {
+display: inline-flex;
+align-items: center;
+user-select: none;
+}
+
+/* создание в label псевдоэлемента before со следующими стилями */
+.custom-checkbox+label::before {
+content: '';
+display: inline-block;
+width: 1em;
+height: 1em;
+flex-shrink: 0;
+flex-grow: 0;
+border: 1px solid #adb5bd;
+border-radius: 0.25em;
+margin-right: 0.5em;
+background-repeat: no-repeat;
+background-position: center center;
+background-size: 50% 50%;
+}
+
+/* стили при наведении курсора на checkbox */
+.custom-checkbox:not(:disabled):not(:checked)+label:hover::before {
+border-color: #b3d7ff;
+}
+
+/* стили для активного чекбокса (при нажатии на него) */
+.custom-checkbox:not(:disabled):active+label::before {
+background-color: #b3d7ff;
+border-color: #b3d7ff;
+}
+
+/* стили для чекбокса, находящегося в фокусе */
+.custom-checkbox:focus+label::before {
+box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* стили для чекбокса, находящегося в фокусе и не находящегося в состоянии checked */
+.custom-checkbox:focus:not(:checked)+label::before {
+border-color: #80bdff;
+}
+
+/* стили для чекбокса, находящегося в состоянии checked */
+.custom-checkbox:checked+label::before {
+border-color: #0b76ef;
+background-color: #0b76ef;
+background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+}
+
+/* стили для чекбокса, находящегося в состоянии disabled */
+.custom-checkbox:disabled+label::before {
+background-color: #e9ecef;
+}
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=Roboto:ital,wght@0,200;0,400;0,500;1,300;1,400&display=swap');
+.google-btn {
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 3px 3px 4px 1px rgba(0,0,0,.25);
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: min-content;
+  padding: 2px 5px 2px 5px;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+  .google-icon-wrapper {
+    width: 40px;
+    height: 40px;
+    border-radius: 2px;
+
+  }
+  .google-icon {
+
+    margin-top: 11px;
+    margin-left: 5px;
+  
+    width: 18px;
+    height: 18px;
+  }
+  .btn-text {
+    color: #3B4045;
+    font-size: 13px;
+    letter-spacing: 0.2px;
+    font-family: "Roboto";
+    white-space: nowrap;
+    font-weight: 200;
+    border-radius:5px;
+
+  }
+
+
+
+}

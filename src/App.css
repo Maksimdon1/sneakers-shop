@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=Roboto:ital,wght@0,400;0,500;1,300;1,400&display=swap');
+:root {
+  --text-color: black;
+  --background-color: white;
+}
+.swiper-button-prev {
+  color: red; 
+}
+
+.swiper-button-next {
+  /* color: #000!important;  */
+
+
+}
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+a{
+  text-decoration: none;
+  text-decoration-color: white;
+  color: rgb(66, 66, 66);
+}
+
+html, body{
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+
+html,body{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+a{
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-color: white;
+    --background-color: black;
+
+  }
+
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --text-color: black;
+    --background-color: white;
+  }
+
+}
+
+
+@media (min-width: 0px ) and (max-width: 1000px){
+  #root{
+
+    height: 100vh;
+    padding-bottom: 54px;
+
+  }
+}
+@media (min-width: 320px ) and (max-width: 723px){}
+@media (min-width: 1000px ) and (max-width: 1600px){
+
+}
+
+/* *{
+  box-shadow: 2px 4px 2px 0px rgba(0,0,0,.20);
+} */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+.chart-container{
+  max-width: 100vw;
+  width: 100%;
+ 
+  height: auto;
+  position: absolute;
+  z-index: 2000000;
+ 
+  opacity: 1;
+
+}
+
+.chart-container canvas{
+  /* max-width: 100vw!important;
+  width: auto!important;
+  height: 100vh!important;
+  margin: 0;
+  padding: 0;
+  margin: auto!important; */
+  padding: 20px;
+  background-color: #fff;
+
+
+
+}
+
+
+
