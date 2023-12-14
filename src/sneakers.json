@@ -1,14 +1,6 @@
 {   "goods" : 
 [
-    {
-        "Brand": "NANOMAX",
-        "Id": 0,
-        "Img": "https://outmaxshop.ru/components/com_jshopping/files/img_products/30129/thumb_-30129-1.jpg",
-        "Kategory": "Кроссовки",
-        "price": 69,
-        "title": "Салфетки для ухода за обувью",
-        "unique_code": "o62hfjqcjn"
-    },
+   
     {
         "Brand": "Nike",
         "Id": 2,

@@ -262,7 +262,7 @@ function voidBottomPanel(props){
                                  
                  </div>
              </div>
-             <div className="title">{img.title}</div>
+             <div className="title"><p>{img.title}</p></div>
              <div className="delivery-date long" onClick={(el) => {
        el.preventDefault();
        voidBottomPanel({title: 'Доставка на выбранный адрес', description:'Выбрать адрес можно в профиле ', url: '/user/info?show=delivery-ddresses'})
