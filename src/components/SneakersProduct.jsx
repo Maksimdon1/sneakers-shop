@@ -307,7 +307,7 @@ export default function SneakersProduct() {
             </div>
             </div>
             <div className="container">
-            <div className="share">
+            {/* <div className="share">
               <div
                 className="share-button"
                 onClick={(el) => {
@@ -325,7 +325,7 @@ export default function SneakersProduct() {
                 </svg>
               </div>
    
-            </div>
+            </div> */}
             <div className="bonuses">
               Вернем      {Math.round(((Price.lenght +   Price.wrapper) * 0.11) / 1) * 1} баллами <div className="icon">
                 <img src={require("../static-img/svg/coin-vector-svgrepo-com (1).svg").default} alt="" srcset="" />
