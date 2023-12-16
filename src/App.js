@@ -21,6 +21,7 @@ import { getNewAccessToken } from './store/actions';
 import Camera from './components/TEST/camera/camera';
 import Sneakers from './components/Sneakers';
 import SneakersProduct from './components/SneakersProduct';
+import SearchPage from './components/SearchPage';
 
 function App() {
   const dispatch = useDispatch()
@@ -83,24 +84,21 @@ function App() {
 
 
 
-
+<Header/>
 <Routes>
 
-  <Route path="/camera" element = {   <Camera/>} />
-       <Route path="/" element = {  <><Header/>  <Home/></>} />
+       <Route path="/camera" element = {   <Camera/>} />
+       <Route path="/search" element = {< SearchPage/>} />
+       <Route path="/" element = {  <>  <Home/></>} />
        <Route path="/house" element = {  <><House/></>} />
        <Route path="/test" element = {<Test/>} />
        <Route path="/user" element = {  <User/>} />
        <Route path="/product/:url" element = {   <Product/> } />
        <Route path="/product/sneakers/:url" element = {   <SneakersProduct/> } />
-
        <Route path="/catalog" element = {  <Sneakers/>} />
-
        <Route path="/basket" element = {   <Basket/>} />
        <Route path="/user/info" element = {   <DopUserPages/>} />
-       
        <Route path='*' element={ <NotFound/>} />
-
        <Route path="*" element={<Navigate to="/" />} />
    </Routes>
 

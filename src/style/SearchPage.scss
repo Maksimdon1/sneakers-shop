@@ -1,0 +1,72 @@
+.seacrh-input-component{
+    display: flex;
+    width: 85%;
+    margin-left: 7.5%;
+    margin-right: 7.5%;
+    margin-top: 5%;
+
+
+.small-search{
+    min-width: 100%;
+    position: relative;
+  
+    margin: 0 auto;
+    max-height: 50px;
+  }
+   input {
+     width: 85%;
+     height: 42px;
+     padding-left: 10px;
+     border: 2px solid #7BA7AB;
+     border-radius: 5px;
+     outline: none;
+     background: #F9F0DA;
+     color: #000000;
+     font-size: larger;
+   }
+   button {
+     position: absolute; 
+     font-size: 20px;
+   
+     right: 0px;
+     width: 80px;
+     height: 42px;
+     border: none;
+     background: #7BA7AB;
+     border-radius: 0 5px 5px 0;
+     cursor: pointer;
+     color: white;
+     margin-left: 5px;
+   }
+
+}
+.search-input:focus{
+    border: 2px solid #098f9b;
+}
+.search-tips{
+    display: none;
+}
+//:not(:placeholder-shown)
+.not-found{   
+    margin-bottom: 4%;
+    width: 100%;
+    height: auto;
+    display: flex;
+    font-size: 16px;}
+.search-input:focus ~ .search-tips{
+    margin-top: 2%;
+    display: flex;
+    width: 100%;
+    height: auto;
+    padding: 5%;
+    background-color: rgba(231, 227, 227, 0.831372549);
+    border-radius: 5px;
+    flex-wrap: wrap;
+}
+.found-item{
+    margin-bottom: 2%;
+    width: 100%;
+    height: auto;
+    display: flex;
+    font-size: 16px;
+}

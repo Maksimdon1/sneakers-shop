@@ -41,8 +41,7 @@ export  function Header() {
   
   return (
    <>
-   <header onClick={(el) => {
-                change_panel() }}>
+   <header  >
     
     <div className="logo">  <Link to={'/'} >FlowerLover</Link></div>
     <div className="navigate">
@@ -52,14 +51,11 @@ export  function Header() {
     <div className="button"> <Link to={'/about'} >О нас</Link></div>
     </div>
     <div className="right">
-       {/* <div className="search"> */}
-       {/* <div class="search-box"> */}
-    {/* <button class="btn-search"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16"> */}
-  {/* <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/> */}
-{/* </svg></button> */}
-    {/* <input type="text" class="input-search" onChange={(el)=>{(Setsearch(el.target.value))}} placeholder="Type to Search..."/> */}
-  {/* </div> */}
-       {/* </div> */}
+    <Link to={'/search'} >
+      <div className="search">
+        <img src={require('../static-img/svg/search.svg').default} alt="" srcset="" />
+      </div>
+      </Link>
        <div className="header-user">
         <Link to={'/user'} >
        
@@ -76,16 +72,17 @@ export  function Header() {
               
        </div>
 
-  
-              <div className="panel-btn open" >
+  <div className=""  onClick={(el) => {
+                change_panel() }}>
+              <div className={"panel-btn" + " " + (panel? 'open' : 'close')} >
                <label class="burger" for="burger" >
-  <input type="checkbox" id="burger"/>
+
   <span></span>
   <span></span>
   <span></span>
 </label>
                </div>
-
+</div>
      
 
       

@@ -23,16 +23,16 @@ export default function Sneakers() {
   const path = useSelector(
     state => state.PathReducer
   )
-  if(pageYOffset){
-    window.scrollTo({ top: pageYOffset});
-  }
-  useEffect(() => {
+  // if(pageYOffset){
+  //   window.scrollTo({ top: pageYOffset});
+  // }
+  // useEffect(() => {
 
 
 
     
-    window.scrollTo({ top: pageYOffset});
-  }, [pageYOffset]);
+  //   window.scrollTo({ top: pageYOffset});
+  // }, [pageYOffset]);
 
 
 
@@ -174,12 +174,7 @@ require('../sneakers.json').goods.forEach((element) => {
     SetSneakers(data)
  }
 
-
-
-
-
-
-
+ 
 
 
 
@@ -308,7 +303,7 @@ require('../sneakers.json').goods.forEach((element) => {
           </svg>
          )}
         </div>
-        <img src={require(`../static-img/img/${img.unique_code}/1.jpg`)} alt=""/>
+        <img src={require(`../static-img/img/${img.unique_code}/1.jpg`)  } loading="eager"   alt=""/>
 
         <div className="card"
         //  onClick={()=>{    localStorage.setItem("pageYOffset", window.pageYOffset)  }}
