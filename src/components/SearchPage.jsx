@@ -13,7 +13,7 @@ export default function SearchPage() {
                 return product.title.toLowerCase().includes(Search.toString().toLowerCase())
               })
         )
-      
+      console.log(SearchResutl.length)
     }, [Search]);
     
   return (
@@ -26,23 +26,48 @@ export default function SearchPage() {
 
             <button>найти</button>
             <div className="search-tips">
-                {SetSearchResutl.length ?  (
-            <>
-                    {SearchResutl.slice(0,5).map((product) =>
-                        <Link to={'/product/sneakers/' + product.unique_code}>  <div className="found-item">{(product.title).replace("Кроссовки", "")}</div></Link>
-                     )}
-           </>
-           ):(
-            <>
-            
-                <div className="not-found">
-                ничего не найдено
-               </div> 
-            </>
-            )
-        }
+
+
+   {(() => {
+    if(SearchResutl){
+   return <div>
+        {SearchResutl.slice(0,5).map((product) =>
+          <Link to={'/product/sneakers/' + product.unique_code}>  <div className="found-item">{(product.title).replace("Кроссовки", "")}</div></Link>
+        )}
+    </div>
+
     
-                
+      }
+   
+      })()}
+     {(() => {
+
+    if(!SearchResutl[0]){
+      return (
+        <div className="not-found">
+        ничего не найдено
+      </div> 
+      )
+
+    }
+      })()}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             
            
             </div>
