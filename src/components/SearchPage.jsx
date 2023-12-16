@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react'
 import '../style/SearchPage.scss'
+import { Link } from "react-router-dom";
 
 export default function SearchPage() {
     const [Search, SetSearch] = useState('')
@@ -28,7 +29,7 @@ export default function SearchPage() {
                 {SetSearchResutl.length ?  (
             <>
                     {SearchResutl.slice(0,5).map((product) =>
-                                        <div className="found-item">{(product.title).replace("Кроссовки", "")}</div>
+                        <Link to={'/product/sneakers/' + product.unique_code}>  <div className="found-item">{(product.title).replace("Кроссовки", "")}</div></Link>
                      )}
            </>
            ):(
