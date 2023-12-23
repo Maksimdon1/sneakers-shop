@@ -19,8 +19,8 @@ export default function SearchPage() {
   return (
     <>
     <div className="seacrh-input-component">
-          <div className="small-search">
-            <input type="text" className='search-input' placeholder="Искать здесь..." onChange={(el) => {
+          <div className="small-search"> 
+            <input type="text" className='search-input' autoFocus='true' placeholder="Искать здесь..." onChange={(el) => {
                     SetSearch(el.target.value)
                   }} />
 
