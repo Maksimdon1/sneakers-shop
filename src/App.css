@@ -15,6 +15,7 @@
 }
 
 *{
+
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -26,6 +27,7 @@ a{
 }
 
 html, body{
+  background-color: #F7F8FA;
   background-color: var(--background-color);
   color: var(--text-color);
 }

@@ -43,7 +43,7 @@ export  function Header() {
    <>
    <header  >
     
-    <div className="logo">  <Link to={'/'} >FlowerLover</Link></div>
+    <div className="logo">  <Link to={'/'} >Sneakers shop</Link></div>
     <div className="navigate">
     <div className="button"> <Link to={'/katalog?params=bouquets'} content='flowers'  >Букеты</Link></div>
     <div className="button"> <Link to={'/holidays'}  >Праздники</Link></div>
