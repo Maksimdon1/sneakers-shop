@@ -9,7 +9,8 @@ import { gsap } from "gsap";
 import BottomPanel from "./BottomPanel";
 import { useDispatch, useSelector } from 'react-redux';
 import * as types from '../store/types'
-
+import List from "./_catalog/List";
+import Table from "./_catalog/Table";
 
 
 export default function Sneakers() {
@@ -17,6 +18,7 @@ export default function Sneakers() {
   const [pageYOffset, SetpageYOffset] = useState(localStorage.getItem('pageYOffset'))
   const [ShowBottomPanel, SetShowBottomPanel] = useState(false)
   const [ShowBottomPanelData, SetShowBottomPanelData] = useState()
+  const [ShowType, SetShowType] = useState('table')
 
 
  const dispatch = useDispatch()
@@ -189,7 +191,7 @@ require('../sneakers.json').goods.forEach((element) => {
 
 
  const showImage = () => {
-  document.getElementById("katalog-all").style.display = "grid"
+  // document.getElementById("katalog-all").style.display = "grid"
  };
  const change = (id) => {
   const el = document.getElementById(id);
@@ -219,123 +221,17 @@ require('../sneakers.json').goods.forEach((element) => {
   {ShowBottomPanel && <div  onTouchMove={(el)=>{voidBottomPanel()}}><BottomPanel params={ShowBottomPanelData} /></div>}
    {/* <Login type={'login'}/> */}
    <div className="katalog">
+  <div className="show-type"><div className="title">Каталог</div>
+  <div className="icon">
 
-    {/* <div className="infoComponent">
-       <InfoComponents type={'cashback'} />
+  {ShowType==='table' && (<><img onClick={(el)=>{SetShowType('list')}} src={require('../static-img/svg/four-squares-list-svgrepo-com.svg').default}  alt="" srcset="" /></>)}
+      {ShowType==='list'&& (<><img onClick={(el)=>{SetShowType('table')}}  src={require('../static-img/svg/list-ul-alt-svgrepo-com.svg').default} style={{'width':'26px'}}  alt="" srcset="" /></>)}
+  </div>
   
-    </div>
+  </div>
+  {ShowType==='list' && (<><List/></>) }
+  {ShowType==='table' && (<><Table/></>) }
 
-
-
-
-    <div className="infoComponent">
-
-       <InfoComponents type={'quality'} />
-       <InfoComponents type={'delivery'} />
-    </div> */}
-
-
-    <div
-     className="katalog-all-sneakers"
-     id="katalog-all"
-     onLoad={(el) => {
-      showImage();
-     }}
-    >
-
-     {sneakers.slice(0,50).map((img, key) => (
-      <>
-      <Link to={`/product/sneakers/${img["unique_code"]}`} >
-       <div
-        key={key}
-        className="item"
-        id={img.Id}
-        onLoad={() => {
-         change(img.Id);
-        }}
-       >
-                <div
-         className="like"
-         onClick={(el) => {
-          el.preventDefault();
-          add_To_Like(img['unique_code']);
-         }}
-        >
-         {img.like ? (
-          <svg viewBox="0 0 24.00 24.00" fill="none" id={`like-${img.Id}`} xmlns="http://www.w3.org/2000/svg">
-           <g id="SVGRepo_bgCarrier" stroke-width="0" />
-
-           <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.8160000000000001" />
-
-           <g id="SVGRepo_iconCarrier">
-            <path
-             xmlns="http://www.w3.org/2000/svg"
-             fill-rule="evenodd"
-             clip-rule="evenodd"
-             d="M12 6.00019C10.2006 3.90317 7.19377 3.2551 4.93923 5.17534C2.68468 7.09558 2.36727 10.3061 4.13778 12.5772C5.60984 14.4654 10.0648 18.4479 11.5249 19.7369C11.6882 19.8811 11.7699 19.9532 11.8652 19.9815C11.9483 20.0062 12.0393 20.0062 12.1225 19.9815C12.2178 19.9532 12.2994 19.8811 12.4628 19.7369C13.9229 18.4479 18.3778 14.4654 19.8499 12.5772C21.6204 10.3061 21.3417 7.07538 19.0484 5.17534C16.7551 3.2753 13.7994 3.90317 12 6.00019Z"
-             stroke="#E94E77"
-             stroke-width="1.1"
-             stroke-linecap="round"
-             stroke-linejoin="round"
-             fill="#FF0707"
-            />{" "}
-           </g>
-          </svg>
-         ) : (
-           <svg viewBox="0 0 24.00 24.00" fill="none" id={`like-${img.Id}`} xmlns="http://www.w3.org/2000/svg">
-           <g id="SVGRepo_bgCarrier" stroke-width="0" />
-
-           <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.8160000000000001" />
-
-           <g id="SVGRepo_iconCarrier">
-            {" "}
-            <path
-             fill-rule="evenodd"
-             clip-rule="evenodd"
-             d="M12 6.00019C10.2006 3.90317 7.19377 3.2551 4.93923 5.17534C2.68468 7.09558 2.36727 10.3061 4.13778 12.5772C5.60984 14.4654 10.0648 18.4479 11.5249 19.7369C11.6882 19.8811 11.7699 19.9532 11.8652 19.9815C11.9483 20.0062 12.0393 20.0062 12.1225 19.9815C12.2178 19.9532 12.2994 19.8811 12.4628 19.7369C13.9229 18.4479 18.3778 14.4654 19.8499 12.5772C21.6204 10.3061 21.3417 7.07538 19.0484 5.17534C16.7551 3.2753 13.7994 3.90317 12 6.00019Z"
-             stroke="#B3B2B2"
-             stroke-width="2.4"
-             fill="#fff"
-             stroke-linecap="round"
-             stroke-linejoin="round"
-            />{" "}
-           </g>
-          </svg>
-         )}
-        </div>
-        <img src={require(`../static-img/img/${img.unique_code}/1.jpg`)  } loading="eager"   alt=""/>
-
-        <div className="card"
-        //  onClick={()=>{    localStorage.setItem("pageYOffset", window.pageYOffset)  }}
-         >
-
-      
-           <div className="price">
-                <div className="show-price">{img.price} ₽</div>
-                 <div className="real-price">
-
-                     {img.price * 1.2} <span>&#x20bd; </span>
-
-                                 
-                 </div>
-             </div>
-             <div className="title"><p>{img.title}</p></div>
-             <div className="delivery-date long" onClick={(el) => {
-       el.preventDefault();
-       voidBottomPanel({title: 'Доставка на выбранный адрес', description:'Выбрать адрес можно в профиле ', url: '/user/info?show=delivery-ddresses'})
- 
-      }} >
-               сегодня, от 3 часов
-             </div>
-        </div>
-    
-       </div>
-      </Link>
-     </>
-     ))}
-    </div>
-  
-  
   
    </div>
 
