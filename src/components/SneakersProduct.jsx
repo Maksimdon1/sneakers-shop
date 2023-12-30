@@ -161,6 +161,14 @@ export default function SneakersProduct() {
 
   useEffect(() => {
     dispatch({
+      type: types.SET_MAIN_PATH,
+      payload: 'catalog',
+    })
+
+
+
+
+    dispatch({
       type: types.PATH_ADD,
       payload: {
         path: `/product/${product["unique-url"]}`,
