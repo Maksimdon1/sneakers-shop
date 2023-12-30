@@ -10,15 +10,7 @@
         "title": "Кроссовки Nike Defy All Day цвет белый",
         "unique_code": "oghq40pwn4"
     },
-    {
-        "Brand": "Nike",
-        "Id": 2,
-        "Img": "https://outmaxshop.ru/components/com_jshopping/files/img_products/37634/thumb_nike-defy-all-day-37634-1.jpg",
-        "Kategory": "Кроссовки",
-        "price": 6220,
-        "title": "Зимние Кроссовки Nike Air Force 1 07 Mid LV8",
-        "unique_code": "pshctaucys"
-    },
+
  
     {
         "Brand": "Adidas",
@@ -20530,6 +20522,15 @@
         "price": 4090,
         "title": "Кроссовки Nike Air Jordan 1 Low цвет голубой",
         "unique_code": "pbcv1jmkml"
+    },
+    {
+        "Brand": "Nike",
+        "Id": 2282,
+        "Img": "https://outmaxshop.ru/components/com_jshopping/files/img_products/37634/thumb_nike-defy-all-day-37634-1.jpg",
+        "Kategory": "Кроссовки",
+        "price": 6220,
+        "title": "Зимние Кроссовки Nike Air Force 1 07 Mid LV8 color dark black",
+        "unique_code": "pshctaucys"
     }
 ]
 }

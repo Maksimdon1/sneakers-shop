@@ -55,7 +55,7 @@ export default function Favourites() {
         <div className="list">
           {favorite.map((el)=>(
                 <>
-                  <Link to={`/product/${el["unique_code"]}`}>
+                  <Link to={`/product/sneakers/${el["unique_code"]}`}>
                 <div className="cart">
                     <div className="img" ><img src={require(`../../static-img/img/${el.unique_code}/1.jpg`)} alt="" srcset="" /></div>
                     <div className="item-info">

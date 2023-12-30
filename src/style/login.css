@@ -20,6 +20,7 @@
 }
 
 .login .header {
+  background-color: #ffffff00;
   display: flex;
   flex-wrap: nowrap;
   align-items: flex-end;
