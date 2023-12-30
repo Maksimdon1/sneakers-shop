@@ -1,25 +1,25 @@
 @media (min-width: 1000px ) and (max-width: 1600px){
-
-header{
+  header{
     padding: 0;
     width: 100%;
+    height: 100%;
     max-height: 100px;
     height: auto;
     min-height: 30px;
     margin: 0;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 16px;
+    padding-bottom: 16px;
 
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
     color: rgb(66, 66, 66);
     font-family: 'Inter', sans-serif;
     font-weight: 400;
-    background-color: #fff;
+    background-color: #f8f5f5;
     opacity: 1;
 
-    z-index: 5;
-    position: fixed;
+    z-index: 200;
+    position: relative;
     top: 0;
     left: 0;
     display: flex;
@@ -36,17 +36,11 @@ header{
 
 
 .logo {
-    font-size: 24px;
+    font-size: 19px;
     margin-left: 20px;
 }
 .navigate {
-  color: rgb(66, 66, 66);
-    transform: translate(-50%, -50%);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    display: flex;
-    font-size: 20px;
+  display: none;
 }
 
 .button{
@@ -56,7 +50,7 @@ header{
 
 }
 
-
+  
 
 
 .right {
@@ -69,30 +63,28 @@ header{
     align-items: center;
 }
 .search{
-    max-width: 300px;
  
-   margin: 0;
 
 
-   float: left;
-   
+    float: left;
+    padding-right: 20px;
+    
 }
 .panel-btn{
   cursor: pointer;
   padding: 5px;
   float: right;
   margin-right: 20px;
-  margin-left: 20px;
+
   transition: 2s;
     
 }
 .panel-btn.open{
-  transform: rotate(90deg);
-  transition: 2s;
+
 
 }
 .panel-btn svg{
-    width: 28px;
+    width: 26px;
     height: auto;
     stroke: rgb(66, 66, 66);
 
@@ -102,6 +94,7 @@ header{
 }
 
 .header-user{
+  display: none;
   cursor: pointer;
   padding: 5px;
   float: right;
@@ -139,13 +132,14 @@ header{
     outline: none;
     border-radius: 25px;
     transition: all .5s ease-in-out;
-   
+    
 
     color:#fff;
   }
 
+
   .input-search::placeholder{
- 
+  
     opacity: 0;
     color:rgba(255,255,255,.5);
     font-size: 18px;
@@ -208,22 +202,31 @@ header{
 
 
 
-  .panel.open {
-    top: 70px;
-    position: fixed;
-    width: 30%;
-    height: calc(100vh - 70px) ;
+  .panel.close{
+    display: none;
+    height: 0;
+    width: 100%;
 
-    
-    left: 70%;
-    margin: 0;
-    -webkit-transition:  2s ease-in-out;
-    -o-transition:  2s ease-in-out;
-    transition:  2s ease-in-out;
-    background-color: rgba(255, 255, 255, 1); /* Black w/opacity/see-through */
-    border-radius: 0 0 0 30px;
-    z-index: 10;
+
   }
+.panel.open {
+  z-index: 200;
+  top: 55px;
+  position: fixed;
+  width: 100%;
+  height: calc(100vh - 64.5px) ;
+  color: #000;
+
+  
+
+  margin: 0;
+  -webkit-transition:  2s ease-in-out;
+  -o-transition:  2s ease-in-out;
+  transition:  1s ease-in-out;
+  background-color: rgb(255, 255, 255); /* Black w/opacity/see-through */
+  border-radius: 0 0 0 30px;
+
+}
 
 }
 @media (min-width: 724px ) and (max-width: 999px){

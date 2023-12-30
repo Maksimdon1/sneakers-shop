@@ -1,3 +1,4 @@
+@media (min-width: 300px ) and (max-width: 500px){
 .bottom-header{
     display: flex;
     position: fixed;
@@ -109,4 +110,10 @@ transition:1s ease-in-out;
 .bottom-home svg{
     width: clamp(18px, 6vw, 26px);
     height: auto;
+}
+}
+@media (min-width: 1000px ) and (max-width: 1800px){
+    .bottom-header{
+        display: none;
+    }
 }
