@@ -11,6 +11,16 @@
         "unique_code": "oghq40pwn4"
     },
     {
+        "Brand": "Nike",
+        "Id": 2,
+        "Img": "https://outmaxshop.ru/components/com_jshopping/files/img_products/37634/thumb_nike-defy-all-day-37634-1.jpg",
+        "Kategory": "Кроссовки",
+        "price": 6220,
+        "title": "Зимние Кроссовки Nike Air Force 1 07 Mid LV8",
+        "unique_code": "pshctaucys"
+    },
+ 
+    {
         "Brand": "Adidas",
         "Id": 3,
         "Img": "https://outmaxshop.ru/components/com_jshopping/files/img_products/37545/thumb_adidas-forum-low-37545-1.jpg",
