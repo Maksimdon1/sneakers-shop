@@ -16,6 +16,9 @@ export default function Registration() {
   const [LoginData, SetLoginData] = useState(
     useSelector((state) => state.loginReducer)
   );
+
+
+  let navigate = useNavigate();
   useEffect(() => {
     if (password && mail) {
       Setstep(true);
@@ -25,8 +28,9 @@ export default function Registration() {
   const dispatch = useDispatch();
   async function SetRegistration() {
     dispatch(registration(mail, password, Name, Lastname));
+    navigate("/user");
   }
-  let navigate = useNavigate();
+
 
   const data = useSelector((state) => state.userLogin);
 
