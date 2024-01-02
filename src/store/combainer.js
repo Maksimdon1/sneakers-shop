@@ -6,7 +6,6 @@ const userReducer = combineReducers({
 	PathReducer,
 	userLogin,
 	AlertReducer,
-	userRegister: userRegisterReducer,
 })
 
 export default userReducer
