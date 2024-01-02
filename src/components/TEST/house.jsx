@@ -8,6 +8,7 @@ export default function House() {
     keepPreviousData: true,
     refetchOnWindowFocus: true,
   });
+  console.log(data);
 
 
   const [state, setState] = React.useState()
