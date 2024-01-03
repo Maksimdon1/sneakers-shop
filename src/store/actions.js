@@ -169,9 +169,7 @@ export const logout = () => async (dispatch) => {
 export const registration =
   (email, password, name, lastname) => async (dispatch) => {
     try {
-      dispatch({
-        type: types.USER_REGISTER_REQUEST,
-      });
+   
 
       const configs = {
         headers: {
@@ -191,13 +189,15 @@ export const registration =
             type: types.USER_LOGIN_SUCCESS,
             payload: response.data,
           });
-          dispatch({
-            type: types.ALERT_SUCCESS,
-            payload: {
-              text: "Успешно авторизован",
-            },
-          });
-        })
+					console.log('what ')
+					dispatch({
+						type: types.ALERT_SUCCESS,
+						payload: {
+							text: "Успешно авторизован",
+						},
+					});
+				})
+				console.log('what ')
         .catch(function (error) {
           console.log();
           if (error) {

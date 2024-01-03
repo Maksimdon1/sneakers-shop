@@ -6,51 +6,53 @@ import { registration } from "../../store/actions";
 import LoadingUser from "../user-page-components/loading.jsx";
 
 export default function Registration() {
-  const [step, Setstep] = useState(false);
+  const [step, Setstep] = useState();
   const [show, SetShow] = useState(1);
   const [mail, setMail] = useState("");
   const [password, setPassword] = useState("");
   const [Name, setName] = useState("");
   const [Lastname, setLastname] = useState("");
 
-  const [LoginData, SetLoginData] = useState(
-    useSelector((state) => state.loginReducer)
-  );
+  
 
 
   let navigate = useNavigate();
   useEffect(() => {
     if (password && mail) {
-      Setstep(true);
+      Setstep('active');
     }
   }, [password]);
   console.log(step);
   const dispatch = useDispatch();
-  async function SetRegistration() {
-    dispatch(registration(mail, password, Name, Lastname));
-    navigate("/user");
-  }
+
 
 
   const data = useSelector((state) => state.userLogin);
 
   const alert = useSelector((state) => state.AlertReducer);
-  if (data.loading) {
-    return <LoadingUser />;
+  
+  // if (alert.state && alert.type === "success" && data.userInfo) {
+  //   navigate("/user");
+  // }  
+  console.log( alert, data)
+  async function SetRegistration() {
+    dispatch(registration(mail, password, Name, Lastname));
+    console.log( alert, data)
   }
-  if (alert.state && alert.type === "success" && data.userInfo) {
-    navigate("/user");
-  }
-
+  console.log( alert, data)
   function showNextPage() {
-    if (step <= 2) {
+    if (show <= 2) {
       if (password && mail) {
         document.querySelectorAll(`#step-${show}`)[0].style.display = "none";
         document.querySelectorAll(`#step-${show + 1}`)[0].style.display =
           "flex";
         document.querySelectorAll(`#progress-bar`)[0].style.width = "100%";
 
-        Setstep(false);
+        document.querySelectorAll(`#step2`)[0].style['border-color'] = "lightseagreen";
+        document.querySelectorAll(`#step2`)[0].style['background-color'] = "lightseagreen";
+
+
+        
         SetShow(show + 1);
       }
     }
@@ -70,8 +72,8 @@ export default function Registration() {
       <div id="progress">
         <div id="progress-bar"></div>
         <ul id="progress-num">
-          <li class="step active">1</li>
-          <li class="step active">2</li>
+          <li class="step active" id="step1" >1</li>
+          <li class="step active" id="step2" >2</li>
         </ul>
       </div>
       <form
@@ -157,13 +159,12 @@ export default function Registration() {
             <span class="span">Забыли пароль ?</span>
           </div>
           <button
-            class="button-submit"
+            class={"button-submit"+ ' '+ step}
             onClick={() => {
               showNextPage();
             }}
           >
-            {" "}
-            {step ? <>Далее</> : <></>}{" "}
+           Далее
           </button>
         </div>
         <div className="step-2" id="step-2">

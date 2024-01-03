@@ -60,6 +60,7 @@ const userLoginReducer = (state = initialState, action) => {
 export const AlertReducer = (state = AlertinitialState, action) => {
   switch (action.type) {
     case types.ALERT_SUCCESS:
+			console.log(11212121212121)
       return {
         ...state,
 

@@ -727,6 +727,18 @@
 
   .button-submit {
     margin: 20px 0 10px 0;
+    background-color: #5b5e5e;
+    border: none;
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 10px;
+    height: 50px;
+    width: 100%;
+    cursor: pointer;
+  }
+  .button-submit.active{
+    margin: 20px 0 10px 0;
     background-color: #151717;
     border: none;
     color: white;
@@ -736,6 +748,7 @@
     height: 50px;
     width: 100%;
     cursor: pointer;
+  
   }
 
   .button-submit:hover {
@@ -819,13 +832,13 @@
   }
 
   #progress-num .step {
-    border: 3px solid lightgray;
+
     border-radius: 100%;
     width: 25px;
     height: 25px;
     line-height: 25px;
     text-align: center;
-    background-color: #fff;
+
     font-family: sans-serif;
     font-size: 14px;
     position: relative;
@@ -833,13 +846,20 @@
   }
 
   #progress-num .step.active {
-    border-color: lightseagreen;
-    background-color: lightseagreen;
-    color: #fff;
+
+  
     display: flex;
     justify-content: center;
     align-content: center;
     align-items: center;
+  }
+  #step1{
+    border-color:lightseagreen;
+    background-color:lightseagreen;
+  }
+  #step2{
+    border-color: rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255);
   }
 
   .btn {

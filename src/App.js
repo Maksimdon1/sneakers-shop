@@ -26,6 +26,7 @@ function App() {
   const dispatch = useDispatch();
 
   const alert = useSelector((state) => state.AlertReducer);
+  console.log(alert)
   if (alert.state) {
     closeAlert();
   }

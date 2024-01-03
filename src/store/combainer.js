@@ -1,4 +1,4 @@
-import userLogin  , { userRegisterReducer, AlertReducer, PathReducer, ShowMailReducer } from './reducers'
+import userLogin  , {  AlertReducer, PathReducer, ShowMailReducer } from './reducers'
 import { combineReducers } from 'redux'
 
 const userReducer = combineReducers({
