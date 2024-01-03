@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import login from "../../store/actions";
 
@@ -129,7 +129,9 @@ export default function Login() {
        Войти
       </button>
     </div>
-   
+    <p class="p">
+          Нет аккаунта ? <Link to='/registration'> <span class="span">Создать</span></Link>
+        </p>
   </form>
   </div>
 );
