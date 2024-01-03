@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import "../../style/register.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { registration } from "../../store/actions";
-import LoadingUser from "../user-page-components/loading.jsx";
+
 
 export default function Registration() {
   const [step, Setstep] = useState();
@@ -12,6 +12,9 @@ export default function Registration() {
   const [password, setPassword] = useState("");
   const [Name, setName] = useState("");
   const [Lastname, setLastname] = useState("");
+
+
+
 
   
 
@@ -22,27 +25,43 @@ export default function Registration() {
       Setstep('active');
     }
   }, [password]);
-  console.log(step);
+
   const dispatch = useDispatch();
 
 
 
-  const data = useSelector((state) => state.userLogin);
-
+  const data = useSelector(
+		state => state.userLogin
+	)
   const alert = useSelector((state) => state.AlertReducer);
   
-  // if (alert.state && alert.type === "success" && data.userInfo) {
+
+  useEffect(() => {
+    console.log(alert)
+  }, [alert]);
+
+
+  useEffect(() => {
+    console.log(data)
+  }, [data]);
+
+
+  if (alert.state && alert.type === "success" && data.userInfo) {
+    navigate("/user");
+  }  
+  // if(alert.state && alert.type === "success"){
   //   navigate("/user");
-  // }  
-  console.log( alert, data)
+
   async function SetRegistration() {
     dispatch(registration(mail, password, Name, Lastname));
-    console.log( alert, data)
+    // dispatch(test())
+
   }
-  console.log( alert, data)
-  function showNextPage() {
+
+  function showPage(type) {
     if (show <= 2) {
       if (password && mail) {
+        if(type==='next'){
         document.querySelectorAll(`#step-${show}`)[0].style.display = "none";
         document.querySelectorAll(`#step-${show + 1}`)[0].style.display =
           "flex";
@@ -55,6 +74,20 @@ export default function Registration() {
         
         SetShow(show + 1);
       }
+      if(type==='back'){
+        document.querySelectorAll(`#step-${show}`)[0].style.display = "none";
+        document.querySelectorAll(`#step-${show - 1}`)[0].style.display =
+          "flex";
+        document.querySelectorAll(`#progress-bar`)[0].style.width = "0%";
+
+        document.querySelectorAll(`#step2`)[0].style['border-color'] = "white";
+        document.querySelectorAll(`#step2`)[0].style['background-color'] = "white";
+
+
+        
+        SetShow(show + 1);
+      }
+    }
     }
   }
 
@@ -67,13 +100,15 @@ export default function Registration() {
     }
   }
 
+
   return (
-    <>
+    <div className="registration">
+          <div className="title">Давайте знакомиться</div>
       <div id="progress">
         <div id="progress-bar"></div>
         <ul id="progress-num">
-          <li class="step active" id="step1" >1</li>
-          <li class="step active" id="step2" >2</li>
+          <li class="step active" id="step1"  >1</li>
+          <li class="step active" id="step2"  >2</li>
         </ul>
       </div>
       <form
@@ -112,6 +147,7 @@ export default function Registration() {
             <input
               type="text"
               autoFocus="true"
+              required
               class="input"
               onChange={(el) => {
                 setMail(el.target.value);
@@ -161,7 +197,7 @@ export default function Registration() {
           <button
             class={"button-submit"+ ' '+ step}
             onClick={() => {
-              showNextPage();
+              showPage('next');
             }}
           >
            Далее
@@ -202,7 +238,7 @@ export default function Registration() {
             <span class="span">Забыли пароль ?</span>
           </div>
           <button
-            class="button-submit"
+            class="button-submit active"
             onClick={() => {
               SetRegistration();
             }}
@@ -210,11 +246,20 @@ export default function Registration() {
             {" "}
             {step ? <>Зарегистрироваться</> : <></>}{" "}
           </button>
+          <button
+            class="button-submit active"
+            onClick={() => {
+           
+            }}
+          >
+            {" "}
+            {step ? <>Зарегистрироваться</> : <></>}{" "}
+          </button>
         </div>
         <p class="p">
-          Есть аккаунт ? <span class="span">Войти</span>
+          Есть аккаунт ? <Link to='/login'> <span class="span">Войти</span></Link>
         </p>
       </form>
-    </>
+      </div>
   );
 }

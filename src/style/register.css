@@ -637,6 +637,7 @@
 
 
   .sing-in {
+
     width: 100%;
     font-size: clamp(5px, 5vw, 40px);
     display: flex;
@@ -867,6 +868,17 @@
     border: none;
     border-radius: 3px;
     padding: 6px 12px;
+  }
+  .registration{
+    height: 100dvh;
+    overflow: hidden;
+  }
+  .title{
+    display: flex;
+    font-size: clamp(5px, 5vw, 30px);
+    justify-content: center;
+    margin-top: 10px;
+
   }
 
 }

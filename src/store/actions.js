@@ -3,7 +3,7 @@ import * as types from "./types";
 import { useQuery } from "react-query";
 
 const login = (email, password) => async (dispatch) => {
-  let el = [];
+
 
   try {
     dispatch({
@@ -168,27 +168,60 @@ export const logout = () => async (dispatch) => {
 
 export const registration =
   (email, password, name, lastname) => async (dispatch) => {
-    try {
+
+		dispatch({
+      type: types.USER_REGISTER_REQUEST,
+    });
+	
+	
+		const configs = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+
+    await axios
+      .post("/registration", { email, password, name, lastname }, configs)
+      .then((response) => {
+        console.log(response);
+       
+				dispatch({
+					type: types.ALERT_SUCCESS,
+					payload: {
+						text: "Успешно авторизован",
+					},
+				});
+				dispatch({
+					type: types.USER_REGISTER_SUCCESS,
+					payload:
+					response.data
+				
+				});
+      })
+			.catch(function (error) {
+        console.log();
+        if (error) {
+        
+          dispatch({
+            type: types.ALERT_ERROR,
+            payload: {
+              text: error.response.data.message,
+            },
+          });
+
+         
+        }
+      });
+
+		
+  };
+
+
+	export const test =
+  () => async (dispatch) => {
+
    
 
-      const configs = {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      };
-
-      await axios
-        .post("/registration", { email, password, name, lastname }, configs)
-        .then((response) => {
-          console.log(response);
-          localStorage.setItem(
-            "userInfo",
-            JSON.stringify(response.data.refreshToken)
-          );
-          dispatch({
-            type: types.USER_LOGIN_SUCCESS,
-            payload: response.data,
-          });
 					console.log('what ')
 					dispatch({
 						type: types.ALERT_SUCCESS,
@@ -196,30 +229,9 @@ export const registration =
 							text: "Успешно авторизован",
 						},
 					});
-				})
-				console.log('what ')
-        .catch(function (error) {
-          console.log();
-          if (error) {
-            dispatch({
-              type: types.USER_LOGIN_FAIL,
-              payload: {
-                text: error.response.data.message,
-                state: true,
-                code: error.status,
-              },
-            });
-            dispatch({
-              type: types.ALERT_ERROR,
-              payload: {
-                text: error.response.data.message,
-              },
-            });
-
-            console.log(error.response.data.message);
-          }
-        });
-    } catch (error) {}
+			
+				
   };
+
 
 export default login;

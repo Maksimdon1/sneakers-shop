@@ -3,13 +3,14 @@ import "../style/user.css";
 import * as types from "../store/types"
 import LoadingUser from "./user-page-components/loading";
 import { Success } from "./user-page-components/Success";
-import Login from './login' 
 import { useDispatch, useSelector } from 'react-redux';
 import {getNewAccessToken} from '../store/actions'
+import {  useNavigate } from "react-router-dom";
 
 export function User() {
   const [ShowLogin, SetShowLogin] = useState()
   const dispatch = useDispatch()
+  let navigate = useNavigate();
   const data = useSelector(
 		state => state.userLogin
 	)
@@ -62,8 +63,9 @@ export function User() {
   }
 
   if(ShowLogin){
+    navigate('/login')
 
-    return  <Login type='login'/>
+  
   }
 
 }

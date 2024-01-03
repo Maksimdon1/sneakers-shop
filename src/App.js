@@ -28,7 +28,15 @@ function App() {
   const alert = useSelector((state) => state.AlertReducer);
   console.log(alert)
   if (alert.state) {
+
+    if(alert.type === 'error'){
+      document.querySelector('meta[name="theme-color"]').setAttribute("content", 'red');
+    }
+    if(alert.type === 'success'){
+      document.querySelector('meta[name="theme-color"]').setAttribute("content", '#16AF05');
+    }
     closeAlert();
+    
   }
   function closeAlert() {
     setTimeout(function () {
@@ -36,7 +44,8 @@ function App() {
         type: types.CLOSE_ALERT,
         payload: {},
       });
-    }, 2500);
+      document.querySelector('meta[name="theme-color"]').setAttribute("content", '#FFF');
+    }, 3500);
   }
   const data = useSelector((state) => state.userLogin);
 

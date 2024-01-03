@@ -25,11 +25,12 @@ const AlertinitialState = {
   type: "",
   text: null,
 };
-const userLoginReducer = (state = initialState, action) => {
+const userReducer = (state = initialState, action) => {
   switch (action.type) {
     case types.USER_LOGIN_REQUEST:
       return { ...state, loading: true };
     case types.USER_LOGIN_SUCCESS:
+
       return {
         ...state,
 
@@ -40,6 +41,7 @@ const userLoginReducer = (state = initialState, action) => {
       };
     case types.USER_LOGIN_FAIL:
       console.log(action.payload);
+
 
       return {
         loading: false,
@@ -52,6 +54,22 @@ const userLoginReducer = (state = initialState, action) => {
 
     case types.USER_LOGOUT:
       return {};
+
+		case types.USER_REGISTER_REQUEST:
+
+			return { ...state, loading: true };
+
+		case types.USER_REGISTER_SUCCESS:
+
+			console.log(action.payload)
+      return {
+        ...state,
+
+        loading: false,
+        error: initialState.error,
+        userInfo: action.payload.user,
+        accessToken: action.payload.refreshToken,
+      };
     default:
       return state;
   }
@@ -60,7 +78,7 @@ const userLoginReducer = (state = initialState, action) => {
 export const AlertReducer = (state = AlertinitialState, action) => {
   switch (action.type) {
     case types.ALERT_SUCCESS:
-			console.log(11212121212121)
+
       return {
         ...state,
 
@@ -138,4 +156,4 @@ export const ShowMailReducer = (state = ShowMailReducerDefault, action) => {
   }
 };
 
-export default userLoginReducer;
+export default userReducer;

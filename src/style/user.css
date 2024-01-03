@@ -3,7 +3,7 @@
 
 
 .user{
-    background-color: #F7F8FA;
+    background-color: #F7F7F7;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -57,6 +57,17 @@
     letter-spacing: 1.5px;
     color: #92989e;
     display: flex;
+    width: 100%;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    
+
+}
+
+.info{
+    width: 95%;
 }
 .small-panel .mail.confirmed{
     color: #e65c00;
@@ -73,6 +84,7 @@
 .edit{
     cursor: pointer;
     float: right;
+
 }
 
 
@@ -96,7 +108,7 @@
 
     margin-top: 10px;
     padding: 15px 15px 15px 15px;
-    background-color: #fff;
+    background-color: #FFFFFF;
     display: flex;
 
     width: calc(100% );
@@ -107,7 +119,7 @@
     align-items: center;
 
 
-    box-shadow: 0px 0px 5px 2px #c5c5c5, -6px -6px 12px #ffffff;
+    box-shadow: inset 0px 0px 0px 1px #c5c5c5, -6px -6px 12px #ffffff;
 
 }
 .text{
@@ -165,7 +177,7 @@
     padding: 5px;
     flex-direction: column;
     
-    box-shadow: 0px 0px 5px 2px #c5c5c5, -6px -6px 12px #ffffff;
+    box-shadow: inset 0px 0px 0px 1px #c5c5c5, -6px -6px 12px #ffffff;
 }
 
 .promocodes-title{
@@ -238,7 +250,7 @@
     margin-top: 40px;
 }
 .info-link-map {
-    margin-top: 20px;
+    margin-top: 16px;
     padding: 15px 15px 15px 15px;
     background-color: #fff;
     display: flex;
@@ -248,7 +260,7 @@
     flex-wrap: nowrap;
     justify-content: flex-start;
     align-items: center;    
-    box-shadow: 0px 0px 5px 2px #c5c5c5, -6px -6px 12px #ffffff;
+    box-shadow: inset 0px 0px 0px 1px #c5c5c5, -6px -6px 12px #ffffff;
 
 }
 .info-link-map .text{
