@@ -60,6 +60,7 @@
 
 }
 .product .info{
+    width: 100%;
     padding: 20px;
 }
 
@@ -642,13 +643,13 @@
 
 
 
-        padding: 20px;
+        padding: 15px;
     }
     .info-grid{
         display: grid;
-        grid-template-rows: 40% 60%;
-        height: 89%;
-        max-height: 89%;
+        grid-template-rows: 50% 50%;
+        height: calc(89% - 20px);
+        height: calc(89% - 20px);
         justify-items: stretch;
         align-items: start;
     }
@@ -853,13 +854,14 @@
     
         row-gap: 10px;
         height: 100%;
+
     
-    
-        
+        align-items: end;
     
     }
     
     .delivery-info div{
+        height: min-content;
         display: flex;
       
        

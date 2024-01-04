@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 import { InfoComponents } from "../infoComponents.jsx";
 import {useNavigate} from "react-router-dom";
 import { gsap } from "gsap";
-
+import { ProductSwiper } from "../snekers-product-swiper";
 import { useDispatch, useSelector } from 'react-redux';
 import * as types from '../../store/types'
-
+import Swipers from "../KatalogSwiper";
 
 export default function Table() {
  
@@ -259,7 +259,10 @@ require('../../sneakers.json').goods.forEach((element) => {
           </svg>
          )}
         </div>
-        <img src={require(`../../static-img/img/${img.unique_code}/1.jpg` )  } loading="eager"   alt=""/>
+       <Swipers img={[img.unique_code, img.unique_code]} />
+       
+
+      
 
         <div className="card"
         //  onClick={()=>{    localStorage.setItem("pageYOffset", window.pageYOffset)  }}

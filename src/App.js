@@ -3,7 +3,6 @@ import { User } from "./components/user";
 import { Home } from "./components/home";
 import { Header } from "./components/header.jsx";
 import BottomHeader from "./components/BottomHeader";
-import Product from "./components/product";
 import { Basket } from "./components/basket";
 import { Routes, Route, Navigate } from "react-router-dom";
 import NotFound from "./components/NotFound";
@@ -86,7 +85,7 @@ function App() {
         <Route path="/house" element={<House />} />
         <Route path="/test" element={<Test />} />
         <Route path="/user" element={<User />} />
-        <Route path="/product/:url" element={<Product />} />
+
         <Route path="/product/sneakers/:url" element={<SneakersProduct />} />
         <Route path="/catalog" element={<Sneakers />} />
         <Route path="/basket" element={<Basket />} />

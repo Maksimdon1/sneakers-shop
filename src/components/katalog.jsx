@@ -9,7 +9,7 @@ import { gsap } from "gsap";
 import BottomPanel from "./BottomPanel";
 import { useDispatch, useSelector } from 'react-redux';
 import * as types from '../store/types'
-
+import { ProductSwiper } from "./snekers-product-swiper";
 
 
 export default function Catalog() {
@@ -162,11 +162,7 @@ function voidBottomPanel(props){
   }
   </div>
 
-  <Link to={'sneakers'}>
-    <div className="sneakers-button">
-      В секретный каталог кроссовок
-    </div>
-  </Link>
+
   {ShowBottomPanel && <div  onTouchMove={(el)=>{voidBottomPanel()}}><BottomPanel params={ShowBottomPanelData} /></div>}
    {/* <Login type={'login'}/> */}
    <div className="katalog">
@@ -188,7 +184,8 @@ function voidBottomPanel(props){
           change(img.Id);
          }}
         >
-         <img src={require(`../static-img/flor2/${img.Id}.png`)} alt="" />
+          <ProductSwiper img={[img.Id]} />
+        
          <div
           className="like"
           onClick={(el) => {

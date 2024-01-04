@@ -3,8 +3,8 @@ import { useState, useEffect } from "react";
 import React from "react";
 import "../style/product.css";
 import { useNavigate } from "react-router-dom";
-
 import { ProductSwiper } from "./snekers-product-swiper";
+
 import { Link } from "react-router-dom";
 import { Delivery } from "./Delivery";
 import { share } from "./share";
@@ -295,7 +295,7 @@ export default function SneakersProduct() {
 
       <div className="product">
         <div className="product-img">
-          <ProductSwiper img={product["unique_code"]} />
+          <ProductSwiper img={[product["unique_code"],product["unique_code"]]} />
         </div>
         <div className="info">
           <div className="title">{product.title}</div>

@@ -1,11 +1,10 @@
-
+import React, { useRef, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
-import 'swiper/css/navigation';
 
 import '../styles.css';
 
@@ -13,8 +12,9 @@ import '../styles.css';
 import { Pagination } from 'swiper/modules';
 
 
+
 // import required modules
-export  function  ProductSwiper(props) {
+export default function  Swipers(props) {
   const imgs = [props.img][0]
     console.log(imgs)
 

@@ -19,14 +19,13 @@
     
     .delivery-info div{
         display: flex;
-      
-       
         border-radius: 10px;
         padding: 5px;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         align-items: center;
         justify-content: flex-start;
-        background: linear-gradient(to right, #FFEEC6 ,#FFD8B0 ) ;
+        background: linear-gradient(to right, #FFEEC6 ,#FFD8B0 );
+        background-color: #ffffff00;
         background-color: #ffffff00;
     
     }

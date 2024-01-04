@@ -43,7 +43,7 @@
 
 .katalog-all-table{
     display: grid;
-    grid-template-columns: repeat(2, 1fr );
+    grid-template-columns: repeat(2, calc(50% - 7.5px));
     column-gap: 15px;
     row-gap: 15px;
     margin-bottom: calc(26px + 5vw);
@@ -60,10 +60,12 @@
 .item img{
     width: 100%;
     height: auto;
+    border-radius: 9px;
 }
 .item .like{
+    z-index: 10;
     top: 30px;
-    right: -80%;
+    right: calc(-50vw + 60px);
     /* bottom: 100px; */
     position: relative;
     background-color: rgba(203, 203, 203, 0);
@@ -92,13 +94,16 @@
 .card{
     width: 100%;
     bottom:0px;
-    background-color: rgba(203, 203, 203, 0.45);
-    -webkit-backdrop-filter: saturate(180%) blur(.5rem);
-    backdrop-filter: saturate(180%) blur(.5rem);
+    background-color: rgba(255, 255, 255, 0);
+
     position: relative;
     padding: 10px;
 
     border-radius:  0 0 10px 10px;
+}
+.card::after{
+    filter: blur(5px);
+    background: inherit;
 }
 .card .title {
     max-height: clamp(40px, 5vw, 12vw);
@@ -272,8 +277,10 @@
     margin-bottom: 15px;
 }
 .item img{
-    width: 35%;
-    height: auto;
+    border-radius: 9px;
+    width: auto;
+    height: clamp(14svh,22vw, 26svh);
+
 }
 .item .like{
     top: 0px;
@@ -305,14 +312,18 @@
     /* transform: translate(-50%, -50%); */
 }
 .card{
-    width: 80%;
+ 
     bottom:0px;
-    background-color: rgba(203, 203, 203, 0.45);
+
    
     position: relative;
-    padding: 10px 10px 0 10px;
+    padding: 10px 10px 10px 10px;
 
-    border-radius:  0  10px 10px 0;
+
+}
+.card::after{
+    filter: blur(5px);
+    background: inherit;
 }
 .card .title {
     max-height: clamp(40px, 5vw, 12vw);
@@ -325,6 +336,7 @@
     font-size: clamp(11px, 3.4vw, 20px);
 }
 .card .title p{
+    margin-bottom: 5px;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     display: -webkit-box;
