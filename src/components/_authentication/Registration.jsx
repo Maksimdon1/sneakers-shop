@@ -246,15 +246,7 @@ export default function Registration() {
             {" "}
             {step ? <>Зарегистрироваться</> : <></>}{" "}
           </button>
-          <button
-            class="button-submit active"
-            onClick={() => {
-           
-            }}
-          >
-            {" "}
-            {step ? <>Зарегистрироваться</> : <></>}{" "}
-          </button>
+
         </div>
         <p class="p">
           Есть аккаунт ? <Link to='/login'> <span class="span">Войти</span></Link>

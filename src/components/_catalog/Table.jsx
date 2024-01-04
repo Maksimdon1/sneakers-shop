@@ -259,7 +259,7 @@ require('../../sneakers.json').goods.forEach((element) => {
           </svg>
          )}
         </div>
-       <Swipers img={[img.unique_code, img.unique_code]} />
+       <Swipers img={[img.unique_code,'pshctaucys']} />
        
 
       
