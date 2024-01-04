@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import login from "../../store/actions";
+import '../../style/login.css'
 
 export default function Login() {
   const [mail, setMail] = useState("");
@@ -35,7 +36,7 @@ export default function Login() {
   return(
     
   <div className="login">
-    <div className="title">добрый день </div>
+    <div className="title">Добрый день </div>
  
   <form
     class="form"
@@ -121,12 +122,13 @@ export default function Login() {
         <span class="span">Забыли пароль ?</span>
       </div>
       <button
-        class="button-submit active"
+        class={"button-submit" + ' ' +  (data.loading ?  ('') : ('active')) }
         onClick={() => {
           SetLogin()
         }}
       >
-       Войти
+        {data.loading ?  (<><span class="loader"></span></>) : (<>Войти</>)}
+       
       </button>
     </div>
     <p class="p">

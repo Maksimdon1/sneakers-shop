@@ -727,8 +727,9 @@
   }
 
   .button-submit {
+    display: flex;
     margin: 20px 0 10px 0;
-    background-color: #5b5e5e;
+    background-color: #666666;
     border: none;
     color: white;
     font-size: 15px;
@@ -737,6 +738,9 @@
     height: 50px;
     width: 100%;
     cursor: pointer;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
   }
   .button-submit.active{
     margin: 20px 0 10px 0;
@@ -752,9 +756,6 @@
   
   }
 
-  .button-submit:hover {
-    background-color: #252727;
-  }
 
   .p {
     text-align: center;
@@ -882,3 +883,50 @@
   }
 
 }
+.loader {
+  display: flex;
+  width: 35px;
+  height: 35px;
+  border: 3px dotted #FFF;
+  border-style: solid solid dotted dotted;
+  border-radius: 50%;
+  position: relative;
+  box-sizing: border-box;
+  animation: rotation 2s linear infinite;
+  align-content: center;
+  justify-content: center;
+}
+.loader::after {
+  content: '';  
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border: 3px dotted #FF3D00;
+  border-style: solid solid dotted;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  animation: rotationBack 1s linear infinite;
+  transform-origin: center center;
+}
+    
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 
+@keyframes rotationBack {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+} 
