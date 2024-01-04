@@ -20,6 +20,8 @@ import SneakersProduct from "./components/SneakersProduct";
 import SearchPage from "./components/SearchPage";
 import Login from "./components/_authentication/Login";
 import Registration from "./components/_authentication/Registration";
+import Chat from "./components/_chat/Chat";
+
 
 function App() {
   const dispatch = useDispatch();
@@ -92,6 +94,8 @@ function App() {
         <Route path="/user/info" element={<DopUserPages />} />
         <Route path="/login" element={<Login />} />
         <Route path="/registration" element={<Registration />} />
+        <Route path="/chat" element={<Chat />} />
+        
         <Route path="*" element={<NotFound />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>

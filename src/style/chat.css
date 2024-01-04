@@ -1,0 +1,90 @@
+.chat{
+	height : 100dvh;
+}
+
+
+.chat .header{
+	width: 100%;
+	height: auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+
+	padding: 1.25rem 1rem 0.25rem 1rem;
+}
+
+.chat .header .title{
+
+	font-size: 22px;
+	font-weight: 600;
+	margin: 0;
+
+}
+
+.chat .header .bell{
+padding-top: 10px;
+	
+}
+
+
+.chat .header .bell img{
+	width:20px;
+	height:auto;
+	
+}
+
+
+.chat .header .bell span{
+	display: flex;
+	position: relative;
+	bottom: 37px;
+	left: 6px;
+	font-weight: 550;
+	background-color: #F32220;
+	border-radius: 50px;
+	padding: 2px;
+	height: 17px;
+	width: 17px;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+	font-size: 12px;
+
+	
+}
+
+.main-chat-header{
+	width: 100%;
+	height: auto;
+	display: flex;
+	padding: 10px 20px 10px 20px;
+	justify-content: flex-start;
+
+}
+
+
+.icon-item{
+
+	margin-right: 1.1rem;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.icon-item .icon{
+	width: auto;
+	display: flex;
+	padding: 8px;
+	background-color: #65636358;
+	border-radius: 100%;
+}
+.icon-item .icon img{
+	width: 35px;
+	height: 35px;
+	border-radius: 100%;
+}
+.icon-item .title{
+	font-size: 14.5px;
+	font-weight: 300;
+}
