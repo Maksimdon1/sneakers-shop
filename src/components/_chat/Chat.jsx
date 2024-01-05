@@ -6,6 +6,7 @@ export default function Chat() {
 				<>
 						<div className="chat">
 								<div className="header"><div className="title">Чаты</div><div className="bell"><img src={require('../../static-img/svg/bell-svgrepo-com.svg').default} alt="" srcset="" /><span>4</span></div></div>
+							
 								<div className="main-chat-header">
 									<div className="icon-item"><div className="icon"><img src={require('../../static-img/svg/support-male-svgrepo-com.svg').default} alt="" srcset="" /></div><div className="title">Поддержка</div></div>
 									<div className="icon-item"><div className="icon"><img src={require('../../static-img/svg/megaphone-svgrepo-com.svg').default} alt="" srcset="" /></div><div className="title">Каналы</div></div>
@@ -13,6 +14,16 @@ export default function Chat() {
 
 						
 						
+								</div>
+
+								<div className="secondary-chats">
+									<div className="item">
+										<div className="icon"></div>
+										<div className="title"></div>
+										<div className="last-message"></div>
+									</div>
+
+
 								</div>
 						</div>
 
