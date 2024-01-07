@@ -2,6 +2,7 @@ import React from 'react'
 import '../../style/chat.css'
 
 export default function Chat() {
+	console.log(navigator)
 	return (
 				<>
 						<div className="chat">
