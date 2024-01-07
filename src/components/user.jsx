@@ -48,12 +48,12 @@ export function User() {
     return <Success  data = {data.userInfo}/>
 	}
 
-  if (data.loading) {
-    return <LoadingUser/>
-  }
+  // if (data.loading) {
+  //   return <LoadingUser/>
+  // }
   if(!data.userInfo | alert.type === 'error' ) {
     setTimeout(function(){
-      SetShowLogin(true);
+      navigate('/login')
     },2500);
 
   

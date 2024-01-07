@@ -881,6 +881,13 @@
     margin-top: 10px;
 
   }
+  .login .title{
+   
+    display: flex;
+    font-size: clamp(5px, 5vw, 30px);
+    justify-content: center;
+    margin-top: 10px;
+    }
 
 }
 .loader {

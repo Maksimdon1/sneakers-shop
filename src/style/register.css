@@ -634,6 +634,9 @@
 
 
 @media (min-width: 320px) and (max-width: 723px) {
+  .registration .title{
+
+  }
 
 
   .sing-in {
@@ -870,12 +873,12 @@
     height: 100dvh;
     overflow: hidden;
   }
-  .title{
-    display: flex;
-    font-size: clamp(5px, 5vw, 30px);
-    justify-content: center;
-    margin-top: 10px;
-
+ .registration .title{
+   
+  display: flex;
+  font-size: clamp(5px, 5vw, 30px);
+  justify-content: center;
+  margin-top: 10px;
   }
 
 }
