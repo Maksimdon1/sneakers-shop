@@ -21,6 +21,7 @@ import SearchPage from "./components/SearchPage";
 import Login from "./components/_authentication/Login";
 import Registration from "./components/_authentication/Registration";
 import Chat from "./components/_chat/Chat";
+import { useEffect } from "react";
 
 
 function App() {
@@ -53,7 +54,13 @@ function App() {
   if (data.accessToken && !data.userInfo) {
     dispatch(getNewAccessToken());
   }
-
+  const path = useSelector(
+		state => state.PathReducer
+	)
+  useEffect(() => {
+    console.log(path)
+    document.title = path.MainPath
+  }, [path]);
   return (
     <>
       {alert.state && (

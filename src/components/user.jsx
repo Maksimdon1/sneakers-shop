@@ -47,12 +47,15 @@ export function User() {
 	if(data.userInfo){
     return <Success  data = {data.userInfo}/>
 	}
-
+  console.log(data)
   // if (data.loading) {
   //   return <LoadingUser/>
   // }
-  if(!data.userInfo | alert.type === 'error' ) {
+  if(!data.userInfo  ) {
+    dispatch(getNewAccessToken())
+    console.log(data)
     setTimeout(function(){
+      console.log('eroor exexexexe')
       navigate('/login')
     },2500);
 
@@ -62,10 +65,6 @@ export function User() {
 
   }
 
-  if(ShowLogin){
-    navigate('/login')
-
   
-  }
 
 }
