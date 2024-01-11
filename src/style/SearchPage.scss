@@ -56,7 +56,20 @@
     font-size: 20px;
     justify-content: center;
 }
-.search-input:not(:placeholder-shown) ~ .search-tips{
+// .search-input:not(:placeholder-shown) ~ .search-tips{
+//     margin-top: 2%;
+//     display: flex;
+//     width: 100%;
+//     height: auto;
+//     padding: 2%;
+//     background-color: rgba(231, 227, 227, 0.831372549);
+//     border-radius: 5px;
+//     flex-wrap: wrap;
+// }
+
+
+
+.small-search  .search-tips{
     margin-top: 2%;
     display: flex;
     width: 100%;
