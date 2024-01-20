@@ -1,5 +1,5 @@
 .chat{
-	height : 100dvh;
+	height : calc(100dvh - 62px);
 }
 
 

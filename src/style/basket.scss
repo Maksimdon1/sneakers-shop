@@ -142,11 +142,11 @@
     display: flex;
     flex-wrap: wrap;
     height: auto;
-    min-height: 100%;
+    height: calc(100% - 62px);
     align-content: flex-start;
 
     box-sizing: border-box;
-    height: 100dvh;
+
     padding-bottom: -50px;
 }
 

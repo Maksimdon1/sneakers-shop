@@ -10,6 +10,7 @@ import BottomPanel from "./BottomPanel";
 import { useDispatch, useSelector } from 'react-redux';
 import * as types from '../store/types'
 import { ProductSwiper } from "./snekers-product-swiper";
+import DefaultButton from "./_microComponents/DefaultButton";
 
 
 export default function Catalog() {
@@ -143,6 +144,7 @@ function voidBottomPanel(props){
 
  return (
   <>
+
   <div className="path">
     {path.path ?(
     path.path.map((el)=>{

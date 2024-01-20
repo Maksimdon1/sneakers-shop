@@ -3,6 +3,10 @@ import "../style/SearchPage.scss";
 import { Link } from "react-router-dom";
 
 export default function SearchPage() {
+  
+   if(!localStorage.getItem("SearchHistory")){
+    localStorage.setItem("SearchHistory", JSON.stringify([]));
+   }
  const [Search, SetSearch] = useState("");
  const [SearchResutl, SetSearchResutl] = useState(require("../sneakers.json").goods);
  function addToSearchHistory(title) {

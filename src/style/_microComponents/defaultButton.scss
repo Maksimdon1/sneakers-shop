@@ -1,0 +1,39 @@
+.default-custom-button-div{
+
+	height: auto;
+	display: flex;
+	justify-content: center;
+}
+
+.default-custom-button{
+
+	padding: 10px 5px 10px 5px;
+	border-radius: 5px;
+	appearance: none;
+  background-color: #aaafff;
+  border: none;
+	width:100%;
+ 
+
+  box-sizing: border-box;
+  color: #24292E;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  list-style: none;
+  
+  position: relative;
+  transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+  word-wrap: break-word;
+
+}
+
+

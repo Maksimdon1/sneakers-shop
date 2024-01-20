@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import * as types from "../store/types";
 import List from "./_catalog/List";
 import Table from "./_catalog/Table";
+import DefaultButton from "./_microComponents/DefaultButton";
 
 export default function Sneakers() {
   const [sneakers, SetSneakers] = useState(data);
@@ -127,6 +128,7 @@ export default function Sneakers() {
 
   return (
     <>
+      <DefaultButton  BackgroundColor={'#aaafff'} LinkTo={'name/home'} label={'подпишись'} Width={'80%'} Margin={'5%'} />
       <div className="path">
         {path.path ? (
           path.path.map((el) => {

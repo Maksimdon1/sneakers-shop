@@ -1,7 +1,8 @@
-import React from 'react'
+import {useState} from 'react'
 import '../../style/chat.css'
 
 export default function Chat() {
+	const [notificationsLenght, SetnotificationsLenght] = useState(12)
 	console.log(navigator)
 
     // Create blob link to download
@@ -32,7 +33,7 @@ export default function Chat() {
 	return (
 				<>
 						<div className="chat">
-								<div className="header"><div className="title">Чаты</div><div className="bell"><img src={require('../../static-img/svg/bell-svgrepo-com.svg').default} alt="" srcset="" /><span>4</span></div></div>
+								<div className="header"><div className="title">Чаты</div><div className="bell"><img src={require('../../static-img/svg/bell-svgrepo-com.svg').default} alt="" srcset="" /><span>{notificationsLenght < 10 ? (<>{notificationsLenght}</>) : (<>&#8734;</>)}</span></div></div>
 							
 								<div className="main-chat-header">
 									<div className="icon-item"><div className="icon"><img src={require('../../static-img/svg/support-male-svgrepo-com.svg').default} alt="" srcset="" /></div><div className="title">Поддержка</div></div>

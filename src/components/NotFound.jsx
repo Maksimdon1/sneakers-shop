@@ -2,10 +2,15 @@ import React from 'react'
 import '../style/notfound.scss'
 import { gsap } from "gsap";
 import {useNavigate} from "react-router-dom";
+import DefaultButton from './_microComponents/DefaultButton';
 
 
 
 export default function NotFound() {
+  function goBack(){
+    history(-1)
+
+  }
     React.useEffect(() => {
         gsap.set("svg", { visibility: "visible" });
 
@@ -367,7 +372,10 @@ export default function NotFound() {
       <div class="title">
         <h1>4&#128532;4</h1>
         <h2 >Страница не найдена </h2>
-        <div className="back-btn"  onClick={()=>{history(-1)}}>Назад</div>
+        {/* onClick={()=>{history(-1)}} */}
+        {/* Назад */}
+        <DefaultButton label={'Назад'} onClickFun={ goBack.bind() } BackgroundColor={'#bcb5b5'} Width={'80%'} />
+        
          
         
       </div>
