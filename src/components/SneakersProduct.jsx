@@ -11,7 +11,7 @@ import { share } from "./share";
 import { gsap } from "gsap";
 import { useDispatch, useSelector } from "react-redux";
 import * as types from "../store/types";
-
+import Swiper from "./_customSwiper/Swiper";
 export default function SneakersProduct() {
   console.log(window.innerWidth);
   const dispatch = useDispatch();
@@ -295,7 +295,8 @@ export default function SneakersProduct() {
 
       <div className="product">
         <div className="product-img">
-          <ProductSwiper img={[product["unique_code"],product["unique_code"]]} />
+          <Swiper lenght={6}/>
+          {/* <ProductSwiper img={[product["unique_code"],product["unique_code"]]} /> */}
         </div>
         <div className="info">
           <div className="title">{product.title}</div>

@@ -31,7 +31,7 @@ export  function  ProductSwiper(props) {
         className="mSwiper"
       >  {imgs.map((img) => (
         <>
-        <SwiperSlide>         <img style={{'max-width':'100vw'}} src={require(`../static-img/img/${img}/1.jpg`)} alt="" /></SwiperSlide>  
+        <SwiperSlide>     <div className='img'  style={{'backgroundImage':`../static-img/img/${img}/1.jpg`}}></div></SwiperSlide>  
 
         </>
         ))}

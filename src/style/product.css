@@ -53,8 +53,12 @@
 }
 
 .product{
-    overflow-y: scroll;
-    padding-bottom: 54px;
+    height: calc(100dvh - 62px);
+    padding-bottom: 80px;
+   
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
 
     
 
@@ -119,10 +123,11 @@
 
 .product  .product-img{
     width: 100%;
-    object-fit: cover;
+    display:block;
 
    
-    height: auto;
+    height: 60vh;
+    min-height: 60vh;
 }
 
 .product .set-color .product-img .color-img img{

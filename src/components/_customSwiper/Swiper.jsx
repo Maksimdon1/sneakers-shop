@@ -1,0 +1,60 @@
+import {useState, useEffect} from 'react'
+import './swiper.css'
+import Touches from '../touchesHooks/Touches'
+
+export default function Swiper({path, lenght}) {
+	
+
+	const [TouchStart, SetTouchStart] = useState()
+	const [TouchEnd, SetTouchEnd] = useState()
+	const [SwipeType, SetSwipeType] = useState()
+	const [ShowId, SetShowId] = useState(1)
+	
+	useEffect(() => {
+
+		 console.log(SwipeType)
+		if(SwipeType === 'left'){
+			// console.log('left swipe')
+			SetShowId(ShowId -1)
+		}
+		if(SwipeType === 'right'){
+			if(ShowId === lenght - 1){
+				SetShowId(0)
+				document.querySelector('img.active').classList.remove('active')
+				document.getElementById(`${ShowId}`).classList.add('active')
+				return 
+			}
+			// console.log('right swipe')
+			document.querySelector('img.active').classList.remove('active')
+		
+			SetShowId(ShowId + 1)
+			console.log(ShowId)
+			document.getElementById(`${ShowId}`).classList.add('active')
+			SetSwipeType('')
+
+		}
+	}, [SwipeType]);
+	useEffect(() => {
+		SetSwipeType(Touches(TouchStart, TouchEnd, 'horizontal'))
+	
+	}, [TouchEnd]);
+
+
+	
+
+
+
+	return (
+		<div className='custom-Swiper' onTouchStart={(el)=>{SetTouchStart(el.changedTouches[0].clientX)}}   onTouchEnd={(el)=>[SetTouchEnd(el.changedTouches[0].clientX)]}>
+			<img src={require('../../static-img/img/lodcguwecs/0.jpg')} className='active' id='0' alt="" />
+			<img src={require('../../static-img/img/lodcguwecs/1.jpg')}  id='1' alt="" />
+			<img src={require('../../static-img/img/lodcguwecs/2.jpg')}  id='2' alt="" />
+			<img src={require('../../static-img/img/lodcguwecs/3.jpg')}  id='3' alt="" />
+			<img src={require('../../static-img/img/lodcguwecs/4.jpg')}  id='4'alt="" />
+			<img src={require('../../static-img/img/lodcguwecs/5.jpg')}  id='5'alt="" />
+			<img src={require('../../static-img/img/lodcguwecs/6.jpg')}  id='6'  alt="" />
+			
+
+		</div>
+	)
+}
