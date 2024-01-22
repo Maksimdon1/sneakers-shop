@@ -3,6 +3,7 @@ import "./swiper.css";
 import Touches from "../touchesHooks/Touches";
 
 export default function Swiper({ path, lenght }) {
+
   useEffect(() => {
     let imgs = document.querySelectorAll(".custom-Swiper > img");
     imgs.forEach(function (element) {
@@ -12,6 +13,7 @@ export default function Swiper({ path, lenght }) {
         element.classList.add("horizontal");
       }
     });
+		document.getElementById('0').classList.add("active");
   }, []);
 
   //
@@ -69,7 +71,7 @@ export default function Swiper({ path, lenght }) {
     >
       <img
         src={require("../../static-img/img/lodcguwecs/0.jpg")}
-        className="active"
+        className=""
         id="0"
         alt=""
       />
