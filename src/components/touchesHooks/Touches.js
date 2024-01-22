@@ -2,10 +2,11 @@ export default function Touches(start, end, type){
 	
 		if( type === 'horizontal'){
 
-			if(start - end >= 0){
+			if(start - end >= window.innerWidth * 0.2){
+				console.log(window.innerWidth * 0.2, start - end)
 				return 'right';
 			}
-			else if(start - end <= 0){
+			else if(start - end <= window.innerWidth * -0.2){
 				return 'left';
 			}
 		
@@ -13,10 +14,10 @@ export default function Touches(start, end, type){
 
 	
 		if(  type === 'vertical'){
-			if(start - end >= 0){
+			if(start - end >= window.innerWidth * 0.15){
 				return 'bottom'
 			}
-			else if(start - end <= 0){
+			else if(start - end <= window.innerWidth * 0.15){
 
 				return 'top'
 			}

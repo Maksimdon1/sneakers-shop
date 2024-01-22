@@ -26,6 +26,7 @@ export default function Swiper({ path, lenght }) {
   useEffect(() => {
     console.log(SwipeType);
     if (SwipeType === "left") {
+			SetSwipeType('')
       if (ShowId === 0) {
         SetShowId(lenght);
         document.querySelector("img.active").classList.remove("active");
@@ -41,6 +42,7 @@ export default function Swiper({ path, lenght }) {
       }
     }
     if (SwipeType === "right") {
+			SetSwipeType('')
       console.log(ShowId);
       if (ShowId === lenght) {
         SetShowId(0);
@@ -68,6 +70,7 @@ export default function Swiper({ path, lenght }) {
         SetTouchStart(el.changedTouches[0].clientX);
       }}
       onTouchEnd={(el) => [SetTouchEnd(el.changedTouches[0].clientX)]}
+			onClick={()=>{console.log('click')}}
     >
       <img
         src={require("../../static-img/img/lodcguwecs/0.jpg")}
