@@ -10,7 +10,7 @@
 	min-height: 100%;
  
 	}
-.custom-Swiper img{
+.custom-Swiper img, video{
 	object-fit: cover;
 
 
@@ -21,6 +21,11 @@
 
 
 .custom-Swiper img.active{
+	display: flex;
+
+
+}
+.custom-Swiper video.active{
 	display: flex;
 
 

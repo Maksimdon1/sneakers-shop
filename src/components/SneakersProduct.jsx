@@ -295,7 +295,7 @@ export default function SneakersProduct() {
 
       <div className="product">
         <div className="product-img">
-          <Swiper lenght={6}/>
+          <Swiper lenght={7}/>
           {/* <ProductSwiper img={[product["unique_code"],product["unique_code"]]} /> */}
         </div>
         <div className="info">

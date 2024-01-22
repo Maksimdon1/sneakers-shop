@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import "./swiper.css";
 import Touches from "../touchesHooks/Touches";
+import VideoComponent from "../_microComponents/VideoComponent";
 
 export default function Swiper({ path, lenght }) {
 
@@ -46,13 +47,13 @@ export default function Swiper({ path, lenght }) {
       console.log(ShowId);
       if (ShowId === lenght) {
         SetShowId(0);
-        document.querySelector("img.active").classList.remove("active");
+        document.querySelector(".custom-Swiper > .active").classList.remove("active");
         document.getElementById(`${ShowId}`).classList.add("active");
         SetSwipeType("");
         return;
       } else {
         // console.log('right swipe')
-        document.querySelector("img.active").classList.remove("active");
+        document.querySelector(".custom-Swiper > .active").classList.remove("active");
         SetShowId(ShowId + 1);
         document.getElementById(`${ShowId}`).classList.add("active");
         SetSwipeType("");
@@ -108,6 +109,8 @@ export default function Swiper({ path, lenght }) {
         id="6"
         alt=""
       />
+					<VideoComponent id = {7} />
+    
     </div>
   );
 }
