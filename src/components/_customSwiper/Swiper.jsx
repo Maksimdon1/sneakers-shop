@@ -14,7 +14,20 @@ export default function Swiper({ path, lenght }) {
         element.classList.add("horizontal");
       }
     });
-		document.getElementById('0').classList.add("active");
+		Promise.all(Array.from(document.images).map(img => {
+			if (img.complete)
+					return Promise.resolve(img.naturalHeight !== 0);
+			return new Promise(resolve => {
+					img.addEventListener('load', () => resolve(true));
+					img.addEventListener('error', () => resolve(false));
+			});
+	})).then(results => {
+			if (results.every(res => res))
+			document.getElementById('0').classList.add("active");
+			else
+					console.log('some images failed to load, all finished loading');
+	});
+		
   }, []);
 
   //
@@ -23,6 +36,13 @@ export default function Swiper({ path, lenght }) {
   const [TouchEnd, SetTouchEnd] = useState();
   const [SwipeType, SetSwipeType] = useState();
   const [ShowId, SetShowId] = useState(1);
+
+
+
+
+
+
+
 
   useEffect(() => {
     console.log(SwipeType);
