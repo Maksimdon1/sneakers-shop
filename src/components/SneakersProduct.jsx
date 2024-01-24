@@ -13,7 +13,93 @@ import { useDispatch, useSelector } from "react-redux";
 import * as types from "../store/types";
 import Swiper from "./_customSwiper/Swiper";
 export default function SneakersProduct() {
-  console.log(window.innerWidth);
+
+
+
+
+
+
+  let loadImageOnCanvasAndThenWriteText = (canvas, imageUrl, textToWrite, textStyleOptions) => {
+    // Get the 2D Context from the canvas
+    let ctx = canvas.getContext("2d");
+  
+    // Create a new Image
+    let img = new Image();
+  
+    // Setting up a function with the code to run after the image is loaded
+    img.onload = () => {
+      // Once the image is loaded, we will get the width & height of the image
+      let loadedImageWidth = img.width;
+      let loadedImageHeight = img.height;
+  
+      // Set the canvas to the same size as the image.
+      canvas.width = loadedImageWidth;
+      canvas.height = loadedImageHeight;
+  
+      // Draw the image on to the canvas.
+      ctx.drawImage(img, 0, 0);
+  
+      // Set all the properties of the text based on the input params
+      ctx.font = `${textStyleOptions.fontSize}px ${textStyleOptions.fontFamily}`;
+      ctx.fillStyle = textStyleOptions.textColor;
+      ctx.textAlign = textStyleOptions.textAlign;
+      
+      // Setting this so that the postion of the text can be set
+      // based on the x and y cord from the top right corner
+      ctx.textBaseline = "top";
+      
+      // Finanlly addeing the text to the image
+      ctx.fillText(textToWrite,loadedImageWidth * 0.97, loadedImageHeight * 0.93);
+    };
+  
+    // Now that we have set up the image "onload" handeler, we can assign
+    // an image URL to the image.
+    img.src = imageUrl;
+  };
+  
+  useEffect(() => {
+  
+
+  // Run code after the page is loaded
+ 
+    // Setting up the canvas
+    let theCanvas = document.getElementById("myCanvas");
+  
+    // Some image URL..
+    let imageUrl = require('../static-img/img/lodcguwecs/5.jpg');
+  
+    let textStyleOptions = {
+      fontSize: 40,
+      fontFamily: "Arial",
+      textColor: "rgba(255, 255, 255)",
+      textAlign: "end"
+    };
+  
+    let textToWrite = "Sneaker-shop.ru";
+  
+    // let xCordOfText = 100;
+    // let yCordOfText = '100';
+  
+    // Load image on the canvas & then write text
+    loadImageOnCanvasAndThenWriteText(
+      theCanvas,
+      imageUrl,
+      textToWrite,
+      textStyleOptions,
+      // xCordOfText,
+      // yCordOfText
+    );
+
+  
+  }, []);
+
+
+
+
+
+
+
+
   const dispatch = useDispatch();
   const history = useNavigate();
   const { url } = useParams();
@@ -152,11 +238,11 @@ export default function SneakersProduct() {
 
     var element = document.querySelector(".sell-info");
 
-    if (element) {
-      window.addEventListener("scroll", () => {
-        Visible(element);
-      });
-    }
+    // if (element) {
+    //   window.addEventListener("scroll", () => {
+    //     Visible(element);
+    //   });
+    // }
   }, [url]);
 
   useEffect(() => {
@@ -439,6 +525,7 @@ export default function SneakersProduct() {
             <Delivery />
           </div>
         </div>
+        <canvas id="myCanvas"></canvas>
       </div>
     </>
   );

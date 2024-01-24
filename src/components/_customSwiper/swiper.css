@@ -19,7 +19,17 @@
 	
 }
 
+ .custom-Swiper:has( > img.active){
+	height: 40dvh;
 
+
+
+}
+.custom-Swiper:has( > video){
+	height: auto;
+
+
+}
 .custom-Swiper img.active{
 	display: flex;
 
