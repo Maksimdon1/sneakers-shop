@@ -1020,12 +1020,71 @@
     .share-button svg path{
         stroke: #686565;
     }
+
+
+
+
     }
 
 
 
 
+    .characteristic{
 
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        margin-bottom: 20px;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        border-radius: 10px;
+        background-color: #e3e3e3f1;
+        padding: 15px;
+    
+
+    }
+    .characteristic .item{
+        all: initial;
+        margin-bottom: 4px;
+        padding: 2.5px 5px;
+        display: flex;
+        justify-content: space-between;
+      
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    }
+    .item .value{
+        display: flex;
+        align-items: flex-end;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    }
+    .characteristic  .title{
+        
+        all: initial;
+
+        margin-bottom: 10px;
+        font-size: 24px;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        width: 100%;
+
+    }
+    .characteristic .item .title{
+  
+        all: initial;
+        font-size: 15px;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+       
+
+    }
+    .characteristic .item .title::after{
+        content: "";
+        display: block;
+        width: 100%;
+ 
+        position: absolute;
+        left: 0;
+        top: -5px;
+        border-bottom: 1px dashed #d3d4dd;
+    }
 
 
 
