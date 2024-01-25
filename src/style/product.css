@@ -301,9 +301,10 @@
     width: 100%;
     height: auto;
     flex-wrap: wrap;
-    background-color: #ececec;
+    background-color: #cececea6;
     border-radius: 8px;
     margin-bottom: 20px;
+
 
 }
 .line-1{

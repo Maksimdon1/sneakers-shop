@@ -12,6 +12,7 @@ import { gsap } from "gsap";
 import { useDispatch, useSelector } from "react-redux";
 import * as types from "../store/types";
 import Swiper from "./_customSwiper/Swiper";
+import InfoTextComponent from "./_microComponents/InfoTextComponent";
 export default function SneakersProduct() {
 
 
@@ -32,24 +33,27 @@ export default function SneakersProduct() {
       let loadedImageWidth = img.width;
       let loadedImageHeight = img.height;
   
-      // Set the canvas to the same size as the image.
-      canvas.width = loadedImageWidth;
-      canvas.height = loadedImageHeight;
-  
+      ctx.beginPath();
+      ctx.arc(100, 100, 50, 0, 2 * Math.PI);
+      ctx.strokeStyle = '#000'; // тёмно-синий цвет
+      ctx.lineWidth = 1; // толщина линии в 5px
+      ctx.stroke();
+      
+   
       // Draw the image on to the canvas.
-      ctx.drawImage(img, 0, 0);
+      // ctx.drawImage(img, 0, 0);
   
-      // Set all the properties of the text based on the input params
-      ctx.font = `${textStyleOptions.fontSize}px ${textStyleOptions.fontFamily}`;
-      ctx.fillStyle = textStyleOptions.textColor;
-      ctx.textAlign = textStyleOptions.textAlign;
+      // // Set all the properties of the text based on the input params
+      // ctx.font = `${textStyleOptions.fontSize}px ${textStyleOptions.fontFamily}`;
+      // ctx.fillStyle = textStyleOptions.textColor;
+      // ctx.textAlign = textStyleOptions.textAlign;
       
-      // Setting this so that the postion of the text can be set
-      // based on the x and y cord from the top right corner
-      ctx.textBaseline = "top";
+      // // Setting this so that the postion of the text can be set
+      // // based on the x and y cord from the top right corner
+      // ctx.textBaseline = "top";
       
-      // Finanlly addeing the text to the image
-      ctx.fillText(textToWrite,loadedImageWidth * 0.97, loadedImageHeight * 0.93);
+      // // Finanlly addeing the text to the image
+      // ctx.fillText(textToWrite,loadedImageWidth * 0.97, loadedImageHeight * 0.93);
     };
   
     // Now that we have set up the image "onload" handeler, we can assign
@@ -522,6 +526,8 @@ export default function SneakersProduct() {
                 </div>
               </div>
             </div>
+            
+            <InfoTextComponent BackgroundColor={'#41E05E'} Width={'100%'} label={<div style={{display : 'flex', alignItems:'flex-end', justifyContent:'space-between', width:'100%'}}><div>Завтра</div><div style={{fontSize:'14px'}}>с 12 до 14</div></div> }/>
             <Delivery />
           </div>
         </div>
