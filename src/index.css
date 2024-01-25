@@ -12,10 +12,10 @@
 }
 
 .alert {
-    position:absolute;
+    position:fixed;
     width:  80%;
     transform: translate(-50%, -50%);
-    top: 3vw;
+    top: 3vh;
     z-index: 1000;
     left: 50%;
     padding: 20px;
@@ -32,15 +32,20 @@
 	background-color: #f44336;
 }
 .alert.success{
+    display: flex;
+    justify-content: center;
 	background-color: #07c02c;
 }
 .alert.info{
 	background-color: #4e4c4c;
 }
 .close-alert{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 90%;
+    top: 2.4vh;
 
-	width: 20px;
-	height: 20px;	
 }
 
 .close-alert img{

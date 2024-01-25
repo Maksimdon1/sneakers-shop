@@ -13,8 +13,24 @@ import { useDispatch, useSelector } from "react-redux";
 import * as types from "../store/types";
 import Swiper from "./_customSwiper/Swiper";
 import InfoTextComponent from "./_microComponents/InfoTextComponent";
+
 export default function SneakersProduct() {
 
+
+  const dispatch = useDispatch();
+  const history = useNavigate();
+  const { url } = useParams();
+
+  const [product, SetProduct] = useState(getValue);
+  console.log(product);
+  const [Price, SetPrice] = useState({ lenght: product.price, wrapper: 0 });
+  const [color, SetColor] = useState(product["default-color"] | "");
+  const [size, Setsize] = useState(product["default-size"] | "");
+  const oneItemPrice = product["oneItemPrice"];
+
+  let [length, SetLength] = useState(product["default-length"] | "");
+  let [wrapper, SetWrapper] = useState(product["default-wrapper"] | "");
+  const [Isliked, SetIsLiked] = useState(false);
 
 
 
@@ -111,6 +127,12 @@ export default function SneakersProduct() {
         .writeText(text)
         .then(() =>{
             setIscopied(true);
+            dispatch({
+              type: types.ALERT_SUCCESS,
+              payload: {
+                text: "Успешно скопировано",
+              },
+            });
         })
         .catch(err=>{
             console.error(err)
@@ -131,21 +153,6 @@ export default function SneakersProduct() {
 
 
 
-
-  const dispatch = useDispatch();
-  const history = useNavigate();
-  const { url } = useParams();
-
-  const [product, SetProduct] = useState(getValue);
-  console.log(product);
-  const [Price, SetPrice] = useState({ lenght: product.price, wrapper: 0 });
-  const [color, SetColor] = useState(product["default-color"] | "");
-  const [size, Setsize] = useState(product["default-size"] | "");
-  const oneItemPrice = product["oneItemPrice"];
-
-  let [length, SetLength] = useState(product["default-length"] | "");
-  let [wrapper, SetWrapper] = useState(product["default-wrapper"] | "");
-  const [Isliked, SetIsLiked] = useState(false);
 
   function Islike(url, type) {
     if (type === "get") {
