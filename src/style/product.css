@@ -1021,3 +1021,26 @@
         stroke: #686565;
     }
     }
+
+
+
+
+
+
+
+
+
+
+/* 
+точки
+много точек 
+......
+
+    content: "";
+    display: block;
+    width: 100%;
+    height: 20px;
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    border-bottom: 1px dashed #d3d4dd; */

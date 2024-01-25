@@ -266,7 +266,7 @@ export default function SneakersProduct() {
       },
     });
   }, []);
-
+console.log(product)
   // А также запустим функцию сразу. А то вдруг, элемент изначально видно
 
   return (
@@ -525,6 +525,9 @@ export default function SneakersProduct() {
                   </div>
                 </div>
               </div>
+            </div>
+            <div className="characteristic">
+
             </div>
             
             <InfoTextComponent BackgroundColor={'#41E05E'} Width={'100%'} label={<div style={{display : 'flex', alignItems:'flex-end', justifyContent:'space-between', width:'100%'}}><div>Завтра</div><div style={{fontSize:'14px'}}>с 12 до 14</div></div> }/>
