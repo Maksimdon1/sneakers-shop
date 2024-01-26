@@ -1044,17 +1044,20 @@
     
 
     }
+    .characteristic .info-container{
+        height: 0px;
 
-  .characteristic .container.active{
-	  max-height:auto;
+        overflow: hidden;
+         transition: max-height 0.4s ease-out;
+    }
+  .characteristic .info-container.active{
+
 	  height:auto;
    	
   }
 
-max-height:0px;
-   	overflow: hidden;
-    	transition: max-height 0.2s ease-out;
-    .characteristic .container .item{
+
+    .characteristic .info-container .item{
         all: initial;
 	
         margin-bottom: 4px;
@@ -1064,12 +1067,12 @@ max-height:0px;
       
         font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
     }
-    .container .item .value{
+    .info-container .item .value{
         display: flex;
         align-items: flex-end;
         font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
     }
-    .characteristic  .title{
+    .characteristic  > .title{
         
         all: initial;
 
@@ -1079,7 +1082,21 @@ max-height:0px;
         width: 100%;
 
     }
-    .characteristic .container .item .title{
+    .characteristic > .title::after {
+        position: relative;
+        content: '\002B';
+        color: #777;
+        font-weight: bold;
+        float: right;
+        display: flex;
+
+    }
+    .characteristic  > .title.active::after {
+        content: "\2212";
+
+    }
+    
+    .characteristic .info-container .item .title{
   
         all: initial;
         font-size: 15px;
@@ -1087,7 +1104,7 @@ max-height:0px;
        
 
     }
-    .characteristic .container .item  .title::after{
+    /* .characteristic .info-container .item  .title::after{
         content: "";
         display: block;
         width: 100%;
@@ -1096,7 +1113,7 @@ max-height:0px;
         left: 0;
         top: -5px;
         border-bottom: 1px dashed #d3d4dd;
-    }
+    } */
 
 
 
