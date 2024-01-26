@@ -1044,8 +1044,19 @@
     
 
     }
-    .characteristic .item{
+
+  .characteristic .container.active{
+	  max-height:auto;
+	  height:auto;
+   	
+  }
+
+max-height:0px;
+   	overflow: hidden;
+    	transition: max-height 0.2s ease-out;
+    .characteristic .container .item{
         all: initial;
+	
         margin-bottom: 4px;
         padding: 2.5px 5px;
         display: flex;
@@ -1053,7 +1064,7 @@
       
         font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
     }
-    .item .value{
+    .container .item .value{
         display: flex;
         align-items: flex-end;
         font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -1068,7 +1079,7 @@
         width: 100%;
 
     }
-    .characteristic .item .title{
+    .characteristic .container .item .title{
   
         all: initial;
         font-size: 15px;
@@ -1076,7 +1087,7 @@
        
 
     }
-    .characteristic .item .title::after{
+    .characteristic .container .item  .title::after{
         content: "";
         display: block;
         width: 100%;
