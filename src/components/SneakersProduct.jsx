@@ -33,7 +33,9 @@ export default function SneakersProduct() {
   const [Isliked, SetIsLiked] = useState(false);
 
 
-
+function OpencContainer(){
+  document.querySelector(".conteiner").classlist.add('active');
+}
 
 
   let loadImageOnCanvasAndThenWriteText = (canvas, imageUrl, textToWrite, textStyleOptions) => {
@@ -563,11 +565,13 @@ console.log(product)
             </div>
             <div className="characteristic">
               <div className="title">О товаре</div>
+                 <div className="container" onClick={()=>{OpencContainer()}}>
+              
              
                 <div className="item"><div className="title">Бренд</div><div className="value">{product.Brand}</div></div>
                 <div className="item"><div className="title">Категория</div><div className="value">{product.Kategory}</div></div>
                 <div className="item" onClick={()=>{copy(product.unique_code)}}><div className="title" >Артикул</div> <div className="value">{product.unique_code }  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none"><path stroke="#868695" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" d="M5 6.5a1.5 1.5 0 0 1 1.5-1.501h6a1.5 1.5 0 0 1 1.5 1.5v6a1.5 1.5 0 0 1-1.5 1.5h-6A1.5 1.5 0 0 1 5 12.5v-6Z"/><path stroke="#868695" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" d="M11 5V3.5A1.5 1.5 0 0 0 9.5 2h-6A1.5 1.5 0 0 0 2 3.5v6A1.5 1.5 0 0 0 3.5 11H5"/></svg></div> </div>
-            
+            </div>
 
             </div>
             
