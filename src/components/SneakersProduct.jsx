@@ -578,8 +578,8 @@ console.log(product)
                 </div>
               </div>
             </div>
-            <div className="characteristic" onClick={()=>{OpencContainer()}}>
-              <div className="title">О товаре</div>
+            <div className="characteristic" >
+              <div className="title" onClick={()=>{OpencContainer()}}>О товаре</div>
                  <div className="info-container" >
               
              
