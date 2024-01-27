@@ -1113,11 +1113,19 @@
         align-items: center;
         justify-content: space-between;
     }
-    .function-bar .arrow-back{
+    .functions{
+        display: flex;
+        align-items: center;
+        
+    }
+    
+    .function-bar .arrow-back, .function-bar .location{
         all:initial;
+        margin-right: 5px;
+  
         position:relative;
     }
-    .function-bar .arrow-back svg{
+    .function-bar .arrow-back svg, .location svg{
         width: 35px;
         height: auto;
     }

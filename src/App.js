@@ -86,25 +86,26 @@ function App() {
         </div>
       )}
 
-      <Header />
       <Routes>
-        <Route path="/camera" element={<Camera />} />
-        <Route path="/search" element={<SearchPage />} />
-        <Route path="/" element={<Home />} />
-        <Route path="/house" element={<House />} />
-        <Route path="/test" element={<Test />} />
-        <Route path="/user" element={<User />} />
-
-        <Route path="/product/sneakers/:url" element={<SneakersProduct />} />
-        <Route path="/catalog" element={<Sneakers />} />
-        <Route path="/basket" element={<Basket />} />
-        <Route path="/user/info" element={<DopUserPages />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/registration" element={<Registration />} />
-        <Route path="/chat" element={<Chat />} />
+        {/* <Route path="/camera" element={ <><Camera /></> } /> */}
         
-        <Route path="*" element={<NotFound />} />
-        <Route path="*" element={<Navigate to="/" />} />
+      
+        <Route path="/search" element={ <><Header /> <SearchPage /></>} />
+        <Route path="/" element={<Home />} />
+        <Route path="/house" element={ <><Header /> <House /></>} />
+        <Route path="/test" element={ <><Header /> <Test /></>} />
+        <Route path="/user" element={ <><Header /> <User /></>}/>
+
+        <Route path="/product/sneakers/:url" element={ <> <SneakersProduct /></>} />
+        <Route path="/catalog" element= { <><Header /> <Sneakers  /></>}/>
+        <Route path="/basket" element={ <><Header /> <Basket /></>} />
+        <Route path="/user/info" element={ <><Header /> <DopUserPages /></>} />
+        <Route path="/login" element={ <><Header /> <Login /></>} />
+        <Route path="/registration" element={ <><Header /> <Registration /></>} />
+        <Route path="/chat" element={ <><Header /> <Chat /></>}/>
+        
+        <Route path="*" element={ <><Header /> <NotFound /></>} />
+        {/* <Route path="*" element={<Navigate to="/" /> <><Camera /></>}/> */}
       </Routes>
 
       <BottomHeader />
