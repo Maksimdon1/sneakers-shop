@@ -16,8 +16,9 @@ import InfoTextComponent from "./_microComponents/InfoTextComponent";
 
 export default function SneakersProduct() {
   useEffect(() => {
-    const el = document.querySelectorAll('.bottom-header')
-    el[0].style.display = 'none'
+     document.querySelectorAll('.bottom-header')[0].style.display = 'none'
+     document.querySelectorAll('header')[0].style.display = 'none'
+   
   }, []);
 
 
