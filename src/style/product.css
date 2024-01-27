@@ -1104,6 +1104,23 @@
        
 
     }
+    .function-bar{
+        width: 100%;
+        height: auto;
+        display: flex;
+        padding: 5px 15px;
+        align-content: center;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .function-bar .arrow-back{
+        all:initial;
+        position:relative;
+    }
+    .function-bar .arrow-back svg{
+        width: 35px;
+        height: auto;
+    }
     /* .characteristic .info-container .item  .title::after{
         content: "";
         display: block;

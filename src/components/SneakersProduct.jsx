@@ -15,6 +15,10 @@ import Swiper from "./_customSwiper/Swiper";
 import InfoTextComponent from "./_microComponents/InfoTextComponent";
 
 export default function SneakersProduct() {
+  useEffect(() => {
+    const el = document.querySelectorAll('.bottom-header')
+    el[0].style.display = 'none'
+  }, []);
 
 
   const dispatch = useDispatch();
@@ -322,7 +326,40 @@ console.log(product)
   // А также запустим функцию сразу. А то вдруг, элемент изначально видно
 
   return (
-    <>
+    <><div className="function-bar">
+        <div
+                className="arrow-back"
+                onClick={() => {
+                  history(-1);
+                }}
+              >
+  <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6 12H18M6 12L11 7M6 12L11 17" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+              </div>
+              <div className="">
+
+              <div className="share">
+              <div
+                className="share-button"
+                onClick={(el) => {
+                  shareProduct();
+                }}
+              >
+                <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M20 13V17.5C20 20.5577 16 20.5 12 20.5C8 20.5 4 20.5577 4 17.5V13M12 3L12 15M12 3L16 7M12 3L8 7"
+                    stroke="#000"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+   
+            </div>
+              </div>
+    </div>
       {/* <div className="path">
     {path.path ?(
     path.path.map((el)=>{
@@ -341,20 +378,7 @@ console.log(product)
   
   }
   </div> */}
-      <div
-        className="arrow-back"
-        onClick={() => {
-          history(-1);
-        }}
-      >
-        <img
-          src={
-            require("../static-img/svg/arrow-narrow-circle-broken-left-svgrepo-com.svg")
-              .default
-          }
-          alt=""
-        />
-      </div>
+      
       <div className="price-small">
         <div className="buy">
           <div className="buy-now">Купить сейчас </div>
@@ -465,25 +489,7 @@ console.log(product)
                     </div>
                   </div>
                   <div className="container">
-                    {/* <div className="share">
-              <div
-                className="share-button"
-                onClick={(el) => {
-                  shareProduct();
-                }}
-              >
-                <svg width="25px" height="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M20 13V17.5C20 20.5577 16 20.5 12 20.5C8 20.5 4 20.5577 4 17.5V13M12 3L12 15M12 3L16 7M12 3L8 7"
-                    stroke="#000"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </div>
-   
-            </div> */}
+               
                     <div className="bonuses">
                       Вернем{" "}
                       {Math.round(((Price.lenght + Price.wrapper) * 0.11) / 1) *
