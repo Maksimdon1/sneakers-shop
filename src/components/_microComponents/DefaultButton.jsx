@@ -2,11 +2,11 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import '../../style/_microComponents/defaultButton.scss'
 
-export default function DefaultButton({label, onClickFun, onLoading, LinkTo, BackgroundColor, Width, Margin}) {
+export default function DefaultButton({label, onClickFun, onLoading, LinkTo, BackgroundColor, Width, Margin, WidthAll}) {
 	
 
 	return (
-		< div className='default-custom-button-div' style={{'width': '100%'}}>
+		< div className='default-custom-button-div'   style={{'width': WidthAll || '100%'}}>
 			{LinkTo ? (
 			
 			<>
