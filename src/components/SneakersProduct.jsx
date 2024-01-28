@@ -248,7 +248,7 @@ function OpencContainer(){
     share({
       title: `Привет, посмотри на `,
       text: `Привет, посмотри на `,
-      link: `https://sneaker-shop.netlify.app/product/sneakers/${product["unique_code"]}`,
+      link: `Привет, посмотри на \n https://sneaker-shop.netlify.app/product/sneakers/${product["unique_code"]}`,
       img: `/flor2/${product.Id}.png`,
     });
   }
