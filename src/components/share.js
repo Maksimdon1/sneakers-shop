@@ -19,7 +19,7 @@ export async function share({title, text, link, img}){
           .share({
             title: title,
             text: text,
-            url: link,
+            // url: link,
             files : filesArray
           })
           .then(() => console.log("Удалось поделиться"))
