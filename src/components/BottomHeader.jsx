@@ -10,20 +10,31 @@ export default function BottomHeader(){
   const[ active, setActive ] = React.useState(false);
   function setActiveIcon(element){
       const dom = {
-        home: document.querySelectorAll('.bottom-home')[0],
-        catalog: document.querySelectorAll('.bottom-catalog')[0],
-        basket : document.querySelectorAll('.bottom-basket')[0],
-        chat: document.querySelectorAll('.bottom-chat')[0],
-        user: document.querySelectorAll('.bottom-user')[0],
+        home: [ document.querySelectorAll('.bottom-home')[0], document.querySelectorAll('.bottom-home ~ .point')[0]] ,
+        catalog: [ document.querySelectorAll('.bottom-catalog')[0] ,  document.querySelectorAll('.bottom-catalog ~ .point')[0]],
+        basket : [ document.querySelectorAll('.bottom-basket')[0],  document.querySelectorAll('.bottom-basket ~ .point')[0]],
+        chat:  [document.querySelectorAll('.bottom-chat')[0], document.querySelectorAll('.bottom-chat ~ .point')[0]],
+        user:  [document.querySelectorAll('.bottom-user')[0],  document.querySelectorAll('.bottom-user ~ .point')[0]],
+
+
+
+   
+    
+
 
       }
+      console.log(dom)
       if(active){
-      dom[active].classList.remove('active');
-      dom[element].classList.add('active');
+      dom[active][0].classList.remove('active');
+      dom[active][1].classList.remove('active');
+      dom[element][0].classList.add('active');
+      dom[element][1].classList.add('active');
+
       setActive(element)
       }
       else{
-        dom[element].classList.add('active');
+        dom[element][0].classList.add('active');
+        dom[element][1].classList.add('active');
         setActive(element)
       }
   }
@@ -60,6 +71,7 @@ export default function BottomHeader(){
 
      </div>
      <div className="title">главная</div>
+     <div className="point"></div>
      </Link>
      <Link to={'/catalog'} onClick={(el)=>{setActiveIcon('catalog')}} >
         <div className="bottom-catalog">
@@ -70,6 +82,7 @@ export default function BottomHeader(){
 
         </div>
         <div className="title">каталог</div>
+        <div className="point"></div>
         </Link>
    
         <Link to={'/basket'} onClick={(el)=>{setActiveIcon('basket')}} >
@@ -86,6 +99,7 @@ export default function BottomHeader(){
 
         </div>
         <div className="title">корзина</div>
+        <div className="point"></div>
         </Link>
         <Link to={'/chat'}  onClick={(el)=>{setActiveIcon('chat')}}>
       <div className="bottom-chat">
@@ -102,6 +116,7 @@ export default function BottomHeader(){
 
       </div>
       <div className="title">чат</div>
+      <div className="point"></div>
         </Link>
         <Link to={'/user'}  onClick={(el)=>{setActiveIcon('user')}}>
         <div className="bottom-user">
@@ -117,6 +132,7 @@ export default function BottomHeader(){
 
         </div>
         <div className="title">профиль</div>
+        <div className="point"></div>
 </Link>
         
       </div>
