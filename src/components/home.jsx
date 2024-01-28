@@ -39,6 +39,15 @@ export function Home() {
             <div className="item"><img src={require('../static-img/box/t-shirt.jpg')} alt="" /> <div className="title">футболки</div></div>
           </div>
         </div>
+        <div className="container-3">
+          <div className="title">Бренды</div>
+          <div className="scroll-component">
+            <div className="item"><img src={require('../static-img/box/adidas.svg').default} alt="" /></div>
+            <div className="item"><img src={require('../static-img/box/asics.svg').default} alt="" /></div>
+            <div className="item"><img src={require('../static-img/box/new-balance.svg').default} alt="" /></div>
+            <div className="item"><img src={require('../static-img/box/nike.svg').default} alt="" /></div>
+          </div>
+        </div>
       </div>
     </>
   );
