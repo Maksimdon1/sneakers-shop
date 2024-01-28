@@ -248,7 +248,7 @@ function OpencContainer(){
     share({
       title: `Привет, посмотри на ${product["title"]}`,
       text: `Привет, посмотри на ${product["title"]}`,
-      link: `https://flower-lover.netlify.app/product/${product["unique_code"]}`,
+      link: `https://sneaker-shop.netlify.app/product/sneakers/${product["unique_code"]}`,
       img: `/flor2/${product.Id}.png`,
     });
   }

@@ -6,7 +6,9 @@ import VideoComponent from "../_microComponents/VideoComponent";
 export default function Swiper({ path, lenght }) {
 
   useEffect(() => {
+
     let imgs = document.querySelectorAll(".custom-Swiper .swipes > img");
+
     imgs.forEach(function (element) {
       if (element.width < element.height) {
         element.classList.add("vertical");
@@ -22,8 +24,11 @@ export default function Swiper({ path, lenght }) {
 					img.addEventListener('error', () => resolve(false));
 			});
 	})).then(results => {
-			if (results.every(res => res))
+			if (results.every(res => res)){
 			document.getElementById('0').classList.add("active");
+      document.querySelector('.custom-Swiper').style.height ='100%'
+      }
+      
 			else
 					console.log('some images failed to load, all finished loading');
 	});
