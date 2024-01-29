@@ -1141,7 +1141,7 @@
     } */
 
 
-.Description {
+.description {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -1165,7 +1165,30 @@
     .info-container{
             font-family: 'Inter', sans-serif !important;
             letter-spacing: 0.8px;
-            padding:5px;
+            padding: 2px;
+    }
+    .info-container .text{
+        all:initial;
+        font-family: 'Inter', sans-serif !important;
+        
+        display: -webkit-box;
+        -webkit-line-clamp: 4; // количество строк
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        
+    }
+    .info-container .show-all{
+        color: #0284bc;
+            display: flex;
+            width: 100%;
+            justify-content: flex-end;
+    }
+    .info-container.all .text{
+        all: initial;
+        font-family: 'Inter', sans-serif !important;
+    }
+    .info-container.all .show-all {
+        display: none;
     }
 
 }
