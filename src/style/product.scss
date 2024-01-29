@@ -1141,8 +1141,34 @@
     } */
 
 
+.Description {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-bottom: 20px;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    border-radius: 10px;
+    background-color: #e3e3e3f1;
+    padding: 15px;
 
+    .title {
 
+        all: initial;
+
+        margin-bottom: 10px;
+        font-size: 24px;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        width: 100%;
+
+    }
+    .info-container{
+            font-family: 'Inter', sans-serif !important;
+            letter-spacing: 0.8px;
+            padding:5px;
+    }
+
+}
 
 /* 
 точки
@@ -1157,3 +1183,6 @@
     left: 0;
     bottom: 5px;
     border-bottom: 1px dashed #d3d4dd; */
+
+
+    

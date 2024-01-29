@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect , useCallback} from "react";
 import React from "react";
-import "../style/product.css";
+import "../style/product.scss";
 import { useNavigate } from "react-router-dom";
 import { ProductSwiper } from "./snekers-product-swiper";
 
@@ -13,6 +13,8 @@ import { useDispatch, useSelector } from "react-redux";
 import * as types from "../store/types";
 import Swiper from "./_customSwiper/Swiper";
 import InfoTextComponent from "./_microComponents/InfoTextComponent";
+import Characteristic from "./_microComponents/Characteristic";
+import Description from './_microComponents/Description.jsx'
 
 export default function SneakersProduct() {
   // useEffect(() => {
@@ -38,25 +40,7 @@ export default function SneakersProduct() {
   const [Isliked, SetIsLiked] = useState(false);
 
 
-function OpencContainer(){
 
- 
-  if(document.querySelector(".info-container.active")){
-
-    document.querySelector(".characteristic > .title").classList.remove('active')
-    document.querySelector(".characteristic > .info-container").classList.remove('active')
-    console.log('not')
-
-}
- else {
-  document.querySelector(".characteristic > .title").classList.add('active')
-  document.querySelector(".info-container").classList.add('active')
-  console.log('is')
-  
- 
-  }
-
-}
 
   let loadImageOnCanvasAndThenWriteText = (canvas, imageUrl, textToWrite, textStyleOptions) => {
     // Get the 2D Context from the canvas
@@ -138,37 +122,8 @@ function OpencContainer(){
 
 
 
-  const [Iscopied, setIscopied] = useState(false);
 
 
-    const copy = useCallback(text => {
-        if (typeof text != 'string'){
-            return
-        }
-        navigator.clipboard
-        .writeText(text)
-        .then(() =>{
-            setIscopied(true);
-            dispatch({
-              type: types.ALERT_SUCCESS,
-              payload: {
-                text: "Успешно скопировано",
-              },
-            });
-        })
-        .catch(err=>{
-            console.error(err)
-        })
-      
-    }, []);
-    useEffect(() => {
-       if(Iscopied){
-        const timer = setTimeout(() => {
-            setIscopied(false);
-        }, 3000)
-        return () => clearTimeout(timer)
-       }
-    }, [Iscopied]);
 
 
 
@@ -588,19 +543,12 @@ console.log(product)
                 </div>
               </div>
             </div>
-            <div className="characteristic" >
-              <div className="title" onClick={()=>{OpencContainer()}}>О товаре</div>
-                 <div className="info-container" >
-              
-             
-                <div className="item"><div className="title">Бренд</div><div className="value">{product.Brand}</div></div>
-                <div className="item"><div className="title">Категория</div><div className="value">{product.Kategory}</div></div>
-                <div className="item" onClick={()=>{copy(product.unique_code)}}><div className="title" >Артикул</div> <div className="value">{product.unique_code }  <svg style={{marginLeft:'5px'}} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none"><path stroke="#868695" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" d="M5 6.5a1.5 1.5 0 0 1 1.5-1.501h6a1.5 1.5 0 0 1 1.5 1.5v6a1.5 1.5 0 0 1-1.5 1.5h-6A1.5 1.5 0 0 1 5 12.5v-6Z"/><path stroke="#868695" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" d="M11 5V3.5A1.5 1.5 0 0 0 9.5 2h-6A1.5 1.5 0 0 0 2 3.5v6A1.5 1.5 0 0 0 3.5 11H5"/></svg></div> </div>
-            </div>
 
-            </div>
+              <Characteristic array={ product} defaultOpen={true}/>
+      
             
             <InfoTextComponent BackgroundColor={'#41E05E'} Width={'100%'} label={<div style={{display : 'flex', alignItems:'flex-end', justifyContent:'space-between', width:'100%'}}><div>Завтра</div><div style={{fontSize:'14px'}}>с 12 до 14</div></div> }/>
+            <Description array={product}/>
             <Delivery />
           </div>
         </div>
