@@ -12,7 +12,7 @@ import store from './store/store'
 const queryClient = new QueryClient();
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  // <React.StrictMode> 
+  <React.StrictMode> 
     <BrowserRouter>
     <QueryClientProvider client={queryClient}>
       <Provider store={store}>
@@ -22,5 +22,5 @@ root.render(
       </QueryClientProvider>
     </BrowserRouter>
   
-    //  </React.StrictMode> 
+      </React.StrictMode> 
 );

@@ -1,6 +1,9 @@
 import React from "react";
 
 export default function Description({array}) {
+	function showAll(){
+		document.querySelector(".description > .info-container").classList.add('all')
+	}
 	return (
 		<div className="description">
 			<div className="title">Описание</div>
@@ -13,7 +16,7 @@ export default function Description({array}) {
 					экологично. Рекомендуются с зубными щетками WOWEE для глубокого очищения, предотвращения зубного камня и кровоточивости десен, идеальны для путешественников и носящих брекеты. Выбирайте
 					WOWEE для здоровья и красоты вашей улыбки. Не упустите регулярные акции и скидки – отличный выбор для подарка близким и друзьям!
 				</div>
-				<div className="show-all" onClick={()=>{console.log(document.querySelector(".description > .info-container").classList.add('all'))}}>далее</div>
+				<div className="show-all" onClick={()=>{showAll()}}>далее</div>
 			</div>
 		</div>
 	);
