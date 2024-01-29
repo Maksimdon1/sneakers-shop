@@ -5,6 +5,7 @@ import VideoComponent from "../_microComponents/VideoComponent";
 
 export default function Swiper({ path, lenght }) {
 
+
   useEffect(() => {
 
     let imgs = document.querySelectorAll(".custom-Swiper .swipes > img");
@@ -99,6 +100,7 @@ export default function Swiper({ path, lenght }) {
 			onClick={()=>{console.log('click')}}
     >
 			<div className="swipes">
+        
       <img
         src={require("../../static-img/img/lodcguwecs/0.jpg")}
         className=""

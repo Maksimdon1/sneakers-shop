@@ -45,6 +45,9 @@
 }
 .custom-Swiper .swipes  video.active{
 	display: flex;
+	    object-fit: cover;
+
+    max-height: 40vh;
 
 
 }
@@ -54,6 +57,7 @@
 
 	max-height: 100%;
 	max-width: 100%;
+
 
 
 }
