@@ -77,7 +77,7 @@
     background-color: #15a90d;
   } */
 
-
+/* 
 .bottom-header div.active {
 
 
@@ -105,11 +105,39 @@ bottom: 0px;
 bottom: 10px;
   }
 } 
+
+
+
+
+
+
+
 .bottom-header  .bottom-home.active svg {
     margin: 2px;
         padding: 3px;
     width: 30px;
+} */
+
+
+
+.bottom-header div.active svg g path{
+    stroke: #15a90d;
+
 }
+.bottom-header .bottom-catalog.active svg path,  .bottom-header .bottom-home.active svg path {
+    fill: #15a90d;
+    stroke: #15a90d;
+
+        stroke-width: 0.05px;
+}
+
+
+
+
+
+
+
+
 
 .bottom-catalog svg{
     width: 23px;
@@ -121,6 +149,7 @@ bottom: 10px;
     stroke: none;
     color:#414141 ;
     fill: #414141;
+    stroke-width: 1;
 }
 .bottom-chat svg{
     width: 26px;
