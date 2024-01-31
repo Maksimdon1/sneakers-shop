@@ -38,11 +38,11 @@
 
 }
 
-.bottom-header .point.active{
+/* .bottom-header .point.active{
     opacity: 1;
     background-color: #15a90d;
     
-}
+} */
 .bottom-header .title{
     background-color: #ffffff00;
     padding: 4px 0 0px 0;
@@ -61,6 +61,7 @@
     padding: 5px;
     background-color: #e9e9e9;
     width: min-content;
+        transition: 1.2s ease-in-out;
 }
 .bottom-header div svg g path{
     stroke: #414141;
@@ -78,11 +79,24 @@
 
 
 .bottom-header div.active {
-    display: flex;
-    border-radius: 8px;
 
+
+display: flex;
+    border-radius: 50px;
     background-color: #15a90d;
+    position: relative;
+    bottom: 10px;
+
 }
+.bottom-header div.active svg{
+    padding: 3px;
+    width: 34px;
+}
+.bottom-header  .bottom-home.active svg {
+        padding: 3px;
+    width: 30px;
+}
+
 .bottom-catalog svg{
     width: 23px;
     width: clamp(18px, 6vw, 26px);
