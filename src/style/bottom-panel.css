@@ -61,7 +61,7 @@
     padding: 5px;
     background-color: #e9e9e9;
     width: min-content;
-        transition: 1.2s ease-in-out;
+        /* transition: 1.2s ease-in-out; */
 }
 .bottom-header div svg g path{
     stroke: #414141;
@@ -85,19 +85,30 @@ display: flex;
     border-radius: 50px;
     background-color: #15a90d;
     position: relative;
+
+      animation: higher 1s normal;
     bottom: 10px;
 
 }
 .bottom-header div.active svg{
     padding: 3px;
-    margin: 4px;
+    margin: 3px;
  
-    width: 36px;
+    width: 34px;
 
 }
+@keyframes higher {
+  0% {
+bottom: 0px;
+  }
+  100% {
+bottom: 10px;
+  }
+} 
 .bottom-header  .bottom-home.active svg {
+    margin: 2px;
         padding: 3px;
-    width: 33px;
+    width: 30px;
 }
 
 .bottom-catalog svg{
