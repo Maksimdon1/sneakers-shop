@@ -52,18 +52,13 @@ export function User() {
   // if (data.loading) {
   //   return <LoadingUser/>
   // }
-  if(!data.userInfo  ) {
-    dispatch(getNewAccessToken())
-    console.log(data)
-    setTimeout(function(){
-      console.log('eroor exexexexe')
-      navigate('/login')
-    },2500);
-
-  
-
-
-
+  if (!data.accessToken) {
+		dispatch(getNewAccessToken());
+		console.log(data);
+		setTimeout(function () {
+			console.log("eroor exexexexe");
+			navigate("/login");
+		}, 2500);
   }
 
   
