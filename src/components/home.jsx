@@ -22,7 +22,7 @@ export function Home() {
 			<div className="home">
 				<div className="hello-img">
 					<img src={require("../static-img/articles/retro.jpg")} width={"100%"} alt="" />
-					<Link to={"/article"}>
+					<Link to={"/article/1"}>
 						<div className="button">Перейти</div>
 					</Link>
 				</div>

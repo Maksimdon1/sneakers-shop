@@ -103,6 +103,7 @@ function App() {
         <Route path="/login" element={ <><Header /> <Login /></>} />
         <Route path="/registration" element={ <><Header /> <Registration /></>} />
         <Route path="/chat" element={ <><Header /> <Chat /></>}/>
+        <Route path="/article/:id" element={ <><h5>Страница в стадии разработки, зайдите позже </h5></>}/>
         
         <Route path="*" element={ <><Header /> <NotFound /></>} />
         {/* <Route path="*" element={<Navigate to="/" /> <><Camera /></>}/> */}
