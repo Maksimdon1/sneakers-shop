@@ -22,6 +22,7 @@ import Login from "./components/_authentication/Login";
 import Registration from "./components/_authentication/Registration";
 import Chat from "./components/_chat/Chat";
 import { useEffect } from "react";
+import Articles from "./components/_articles/Articles";
 
 
 function App() {
@@ -103,7 +104,7 @@ function App() {
         <Route path="/login" element={ <><Header /> <Login /></>} />
         <Route path="/registration" element={ <><Header /> <Registration /></>} />
         <Route path="/chat" element={ <><Header /> <Chat /></>}/>
-        <Route path="/article/:id" element={ <><h5>Страница в стадии разработки, зайдите позже </h5></>}/>
+        <Route path="/article/:id" element={<><Header /><Articles/></>}/>
         
         <Route path="*" element={ <><Header /> <NotFound /></>} />
         {/* <Route path="*" element={<Navigate to="/" /> <><Camera /></>}/> */}
