@@ -12,7 +12,7 @@ export default function Articles() {
 		};
 		useEffect(() => {
 		axios
-			.get("http://localhost:3002/server/api/get-article", { id: id }, configs)
+			.get("https://mains-h5w5.onrender.com/server/api/get-article", { id: id }, configs)
 			.then((response) => {
 				console.log(response.request.response);
 
