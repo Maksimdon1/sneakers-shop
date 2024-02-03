@@ -4,7 +4,7 @@ import axios from "../../api/axios";
 import "../../style/article.scss";
 
 export default function Articles() {
-	const list = [[2], [2], [2], [1]];
+	const list = [[2], [1], [2], [1]];
 	const { id } = useParams();
 	const [Article, SetArticle] = useState();
 	const [IsLoaded, SetIsLoaded] = useState();
@@ -36,7 +36,7 @@ export default function Articles() {
 					<div className="title">
 						<p>{Article.Title}</p>
 					</div>
-					<code dangerouslySetInnerHTML={{ __html: Article.Code }}>{}</code>
+					<div className="description" dangerouslySetInnerHTML={{ __html: Article.Code }}>{}</div>
 			
 					<div className="date-created">{Intl.DateTimeFormat("ru-RU",{ dateStyle: 'short', timeStyle:'short'} ).format(new Date(Article.DateCreated))}</div>
 				</>
