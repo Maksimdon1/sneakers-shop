@@ -1,10 +1,12 @@
 import {useState, useEffect} from 'react'
+import { useParams } from "react-router-dom";
 import axios from 'axios'
 
 export default function Articles() {
+	const { id } = useParams();
 	const [Article, SetArticle] = useState()
 	const [IsLoaded, SetIsLoaded] = useState()
-	const id = 1
+
 	  const configs = {
 			headers: {
 				"Content-Type": "application/json",
