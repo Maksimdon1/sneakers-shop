@@ -1,0 +1,64 @@
+.Article {}
+
+.title {
+	all: initial;
+	display: flex;
+	font-size: 18px;
+	justify-content: center;
+	margin-top: 15px;
+
+}
+
+.title p::first-letter {
+	text-transform: uppercase;
+}
+
+.date-created {
+	display: flex;
+	width: 100%;
+	font-size: 12px;
+	justify-content: center;
+	color: #6a737d;
+	padding: 5px;
+}
+
+.alike {
+	all: initial;
+	display: flex;
+	width: 100%;
+	height: auto;
+	overflow-x: scroll;
+	flex-wrap: wrap;
+}
+
+.alike .title {
+	all: initial;
+	display: flex;
+	font-size: 18px;
+	justify-content: center;
+	margin-top: 15px;
+	width: 100%;
+}
+
+.scroll {
+
+	all: initial;
+	padding: 10px;
+	display: flex;
+	width: 100%;
+	height: auto;
+
+	overflow-x: scroll;
+}
+
+.alike .item {
+	all: initial;
+	margin-right: 10px;
+}
+
+.alike .item img {
+	width: 30vw;
+	height: 30vw;
+	object-fit: cover;
+
+}
