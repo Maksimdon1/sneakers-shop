@@ -32,7 +32,7 @@ export default function Articles() {
 		<div className="Article">
 			{Article ? (
 				<>
-					<img width={"100%"} height={"auto"} src={`http://192.168.1.4:3002/static/Article/${Article.ArticleImg}`} alt="" srcset="" />
+					<img width={"100%"} height={"auto"} src={`https://mains-h5w5.onrender.com/static/Article/${Article.ArticleImg}`} alt="" srcset="" />
 					<div className="title">
 						<p>{Article.Title}</p>
 					</div>
@@ -50,7 +50,8 @@ export default function Articles() {
 						return (
 							<>
 								<div className="item">
-									<img height={"auto"} src={`http://192.168.1.4:3002/static/Article/${el}.png`} alt="" srcset="" />
+									<img height={"auto"} src={`https://mains-h5w5.onrender.com/static/Article/${el}.png`} alt="" srcset="" />
+									{/* http://192.168.1.4:3002 */}
 								</div>
 							</>
 						);
