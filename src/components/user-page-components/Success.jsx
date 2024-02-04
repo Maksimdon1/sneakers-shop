@@ -10,6 +10,7 @@ export function Success({data}) {
 
   let navigate= useNavigate()
   const dispatch = useDispatch()
+  console.log(data)
 
   const links = [
     {
@@ -32,6 +33,7 @@ export function Success({data}) {
       "Title": "Про нас",
       "Link": "about",
     },
+     
   ]
 
 
@@ -148,6 +150,27 @@ export function Success({data}) {
                     </div>
                     </Link>
                     ))}
+                        {data.Status == 'Admin' &&  ( 
+
+                    <Link to={`/user/info?show=money`}>
+                    <div className="info-link-map">
+                      <div className="circle">
+                        <span></span>
+                      </div>
+                    
+                      <div className="text">Прибыль</div>
+                      <div className="arrow">
+                        <img
+                          src={
+                            require("../../static-img/svg/arrow-sm-right-svgrepo-com.svg").default
+                          }
+                          alt=""
+                          srcset=""
+                        />
+                      </div>
+                    </div>
+                    </Link>
+                  )}
                     </div>
                   </div>
 

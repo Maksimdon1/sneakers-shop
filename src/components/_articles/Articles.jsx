@@ -51,7 +51,6 @@ export default function Articles() {
 							<>
 								<div className="item">
 									<img height={"auto"} src={`https://mains-h5w5.onrender.com/static/Article/${el}.png`} alt="" srcset="" />
-									{/* http://192.168.1.4:3002 */}
 								</div>
 							</>
 						);

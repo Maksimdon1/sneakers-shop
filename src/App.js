@@ -91,26 +91,26 @@ function App() {
         {/* <Route path="/camera" element={ <><Camera /></> } /> */}
         
       
-        <Route path="/search" element={ <><Header /> <SearchPage /></>} />
-        <Route path="/" element={<><Header /><Home /></>} />
-        <Route path="/house" element={ <><Header /> <House /></>} />
-        <Route path="/test" element={ <><Header /> <Test /></>} />
-        <Route path="/user" element={ <><Header /> <User /></>}/>
+        <Route path="/search" element={ <><Header /> <SearchPage />	<BottomHeader /></>} />
+        <Route path="/" element={<><Header /><Home />	<BottomHeader /></>} />
+        <Route path="/house" element={ <><Header /> <House /><BottomHeader /></>} />
+        <Route path="/test" element={ <><Header /> <Test /><BottomHeader /></>} />
+        <Route path="/user" element={ <><Header /> <User /><BottomHeader /></>}/>
 
-        <Route path="/product/sneakers/:url" element={ <> <SneakersProduct /></>} />
-        <Route path="/catalog" element= { <><Header /> <Sneakers  /></>}/>
-        <Route path="/basket" element={ <><Header /> <Basket /></>} />
+        <Route path="/product/sneakers/:url" element={ <> <SneakersProduct /><BottomHeader /></>} />
+        <Route path="/catalog" element= { <><Header /> <Sneakers  /><BottomHeader /></>}/>
+        <Route path="/basket" element={ <><Header /> <Basket /></>} /> {/*<BottomHeader />*/}
         <Route path="/user/info" element={ <><Header /> <DopUserPages /></>} />
         <Route path="/login" element={ <><Header /> <Login /></>} />
         <Route path="/registration" element={ <><Header /> <Registration /></>} />
         <Route path="/chat" element={ <><Header /> <Chat /></>}/>
-        <Route path="/article/:id" element={<><Header /><Articles/></>}/>
+        <Route path="/article/:id" element={<><Header /><Articles/><BottomHeader /> 	<BottomHeader /></>}/>
         
-        <Route path="*" element={ <><Header /> <NotFound /></>} />
+        <Route path="*" element={ <><Header /> <NotFound /><BottomHeader /></>} />
         {/* <Route path="*" element={<Navigate to="/" /> <><Camera /></>}/> */}
       </Routes>
 
-      <BottomHeader />
+      
     </>
   );
 }

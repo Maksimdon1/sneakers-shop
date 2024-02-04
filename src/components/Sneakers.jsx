@@ -11,6 +11,7 @@ import * as types from "../store/types";
 import List from "./_catalog/List";
 import Table from "./_catalog/Table";
 import DefaultButton from "./_microComponents/DefaultButton";
+import FilterBy  from './_catalog/FilterBy.jsx';
 
 export default function Sneakers() {
   const [sneakers, SetSneakers] = useState(data);
@@ -160,7 +161,7 @@ export default function Sneakers() {
 				{" "}
 				<div className="title">Каталог</div>
 				<div className="show-type">
-					<svg xmlns="http://www.w3.org/2000/svg" width="22" height="18" fill="none">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none">
 						<path
 							fill-rule="evenodd"
 							clip-rule="evenodd"
@@ -168,6 +169,7 @@ export default function Sneakers() {
 							fill="#000"
 						/>
 					</svg>
+					<FilterBy />
 					{/* <div className="filter-by">
 						<div className="custom-select">
 							<form id="app-cover">
