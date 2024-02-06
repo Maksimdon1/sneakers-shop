@@ -57,7 +57,8 @@ export default function Login() {
 							<path d="M12 14C8.13401 14 5 17.134 5 21H19C19 17.134 15.866 14 12 14Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
 						</svg>
 						<input
-							type="text"
+							type="email"
+							pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
 							autoFocus="true"
 							required
 							class="input"
@@ -103,6 +104,8 @@ export default function Login() {
 					</div>
 					<button
 						class={"button-submit" + " " + (data.loading ? "" : "active")}
+						disabled={data.loading}
+						
 						onClick={() => {
 							SetLogin();
 						}}

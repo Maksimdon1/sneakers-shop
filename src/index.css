@@ -52,3 +52,10 @@
     width: 20px;
     height: auto;
 }
+
+
+
+
+:not(:root):fullscreen::backdrop {
+    background: #fff;
+}

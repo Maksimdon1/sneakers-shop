@@ -30,6 +30,17 @@
 	background-color: #fcfbfb;
 
 }
+.item.profit{
+	background-color: #7bea19;
+	display: flex;
+	align-content: center;
+	justify-content: space-between;
+	flex-wrap: nowrap;
+	align-items: center;
+}
+.item.profit .value{
+	font-size: 16px;
+}
 
 .history .item .icon {
 	all: initial;
@@ -43,3 +54,5 @@
 }
 .date {
 }
+
+

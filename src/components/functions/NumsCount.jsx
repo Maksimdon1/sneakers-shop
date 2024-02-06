@@ -11,9 +11,9 @@ export function outNum(num, element){
 	let t = Math.round(time/(num/step))
 	let interval = setInterval(()=>{
 		n = n +=  step;
-		console.log(n)
+
 		l.innerHTML = n
-		console.log(t)
+
 		t += 160000000
 		if(n === num){
 			l.innerHTML = n
