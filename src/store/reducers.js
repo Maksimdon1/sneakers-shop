@@ -46,9 +46,9 @@ const userReducer = (state = initialState, action) => {
       return {
         loading: false,
         error: {
-          text: action.payload.text,
+          text: action.payload,
           state: true,
-          code: action.payload.code,
+          code: action.payload,
         },
       };
 

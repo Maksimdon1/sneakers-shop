@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import "../style/user.css";
 import * as types from "../store/types";
 import LoadingUser from "./user-page-components/loading";
 import { Success } from "./user-page-components/Success";

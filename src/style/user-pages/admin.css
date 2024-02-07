@@ -1,0 +1,45 @@
+.admin{
+	background-color: #F7F7F7;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	padding: 30px 30px 90px 30px;
+	height: auto;
+	min-height: 100vh;
+	margin: 0!important;
+}
+.admin .buttons{
+	display: grid;
+	grid-template-columns: repeat(2, calc(50% - 10px));
+	column-gap: 20px;
+}
+.admin .buttons .info-link-map{
+	padding: 0px 18px 20px 18px;
+	display: flex;
+	width: 100%;
+	height: calc(50vw - 40px);
+	flex-wrap: wrap;
+	flex-direction: column;
+	align-content: center;
+	align-items: center;
+	justify-content: space-around;
+
+}
+.admin .buttons .info-link-map .icon{
+	width: 40%;
+	height: 40%;
+}
+
+.admin .buttons .info-link-map.box .icon{
+	width: 45%;
+	height: 45%;
+} 
+.admin .buttons .info-link-map.diagram .icon img{
+	width: 88%;
+	height: 88%;
+} 
+
+.admin .buttons .info-link-map .icon img{
+	width: 100%;
+	height: 100%;
+}

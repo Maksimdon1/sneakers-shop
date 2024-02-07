@@ -99,7 +99,13 @@ export const getNewAccessToken = () => async (dispatch) => {
         }
       })
       .catch((error) => {
+        // dispatch({
+        //   type: types.USER_LOGIN_FAIL,
+        //   payload: error.data,
+        // });
         if (error === "Unauthorized") {
+         
+          
           console.log("Unauthorized. Please log in.");
         } else {
           console.error("An error occurred:", error);
