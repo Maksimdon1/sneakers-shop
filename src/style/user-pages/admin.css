@@ -8,12 +8,23 @@
 	min-height: 100vh;
 	margin: 0!important;
 }
+.admin > .title{
+	all: initial;
+	display: flex;
+	font-size: 22px;
+	justify-content: center;
+	margin: 20px  0;
+}
 .admin .buttons{
 	display: grid;
-	grid-template-columns: repeat(2, calc(50% - 10px));
-	column-gap: 20px;
+	grid-template-columns: repeat(2, calc(50% - 15px));
+	column-gap: 30px;
+	row-gap: 30px;
 }
 .admin .buttons .info-link-map{
+	all: initial;
+	box-sizing: border-box;
+	border-radius: 8px;
 	padding: 0px 18px 20px 18px;
 	display: flex;
 	width: 100%;
@@ -23,6 +34,7 @@
 	align-content: center;
 	align-items: center;
 	justify-content: space-around;
+	box-shadow: inset 0px 0px 0px 1px #c5c5c5, -6px -6px 12px #ffffff;
 
 }
 .admin .buttons .info-link-map .icon{
@@ -31,8 +43,8 @@
 }
 
 .admin .buttons .info-link-map.box .icon{
-	width: 45%;
-	height: 45%;
+	width: 50%;
+	height: 50%;
 } 
 .admin .buttons .info-link-map.diagram .icon img{
 	width: 88%;
