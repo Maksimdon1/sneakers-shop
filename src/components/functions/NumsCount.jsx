@@ -15,7 +15,7 @@ export function outNum(num, element){
 		l.innerHTML = n
 
 		t  = t * 0.9
-		console.log(t)
+
 		if(n === num){
 			l.innerHTML = n
 			clearInterval(interval)

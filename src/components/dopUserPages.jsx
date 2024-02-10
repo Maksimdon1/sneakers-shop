@@ -13,7 +13,10 @@ import Favourites from './user-components/Favourites';
 import DeliveryAdresses from './user-components/Delivery-ddresses';
 import About from './user-components/About';
 import Edit from './user-components/Edit';
-import Money from "./user-components/Money"
+import Money from "./Admin/pages/Money"
+import Box from "./Admin/pages/Box"
+import Diagram from "./Admin/pages/Diagram"
+import History from "./Admin/pages/History"
 
 export default function DopUserPages() {
     const [searchParams] = useSearchParams();
@@ -29,7 +32,10 @@ export default function DopUserPages() {
         'delivery-ddresses': <DeliveryAdresses/>,
         'about': <About/>,
         'edit': <Edit/>,
-        'money': <Money/>
+        'money': <Money/>,
+        'box': <Box/>,
+        'diagram': <Diagram/>,
+        'history': <History/>
    
 
     }

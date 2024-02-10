@@ -1,0 +1,56 @@
+.savings{
+	display: flex;
+	flex-wrap: wrap;
+}
+.savings .target{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+.changeTarget{
+	padding: 10px 5px 10px 5px;
+	border-radius: 5px;
+	appearance: none;
+	background-color: #aaafff;
+	border: none;
+	width: 80%;
+	margin: auto;
+	margin-top: 20px;
+	box-sizing: border-box;
+	color: #24292E;
+	cursor: pointer;
+	display: inline-block;
+	font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 20px;
+	list-style: none;
+	position: relative;
+	transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+	vertical-align: middle;
+	white-space: nowrap;
+	word-wrap: break-word;
+}
+
+
+
+
+
+
+.circle-container{
+	width: 100%;
+}
+.progress{
+	width: 100%;
+	height:20px;
+	display: flex;
+
+}
+.progress span{
+	height:20px;
+	background-color: #fff;
+}

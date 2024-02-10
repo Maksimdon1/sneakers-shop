@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 import { Line, Bar } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Pie } from "react-chartjs-2";
-import { outNum } from "../functions/NumsCount.jsx";
-import "../../style/user-components/money.scss";
+import { outNum } from "../../functions/NumsCount.jsx";
+import "../../../style/user-components/money.scss";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 ChartJS.defaults.font.size = 15.5;
@@ -48,48 +48,7 @@ export default function Money() {
 				<div className="title">
 					Баланс фирмы <span id="count-1">13000</span> <span>&#x20bd; </span>{" "}
 				</div>
-				<div className="payments">
-					<div className="title">Платежи</div>
-
-					<div className="history">
-						{payments.map((el) => {
-							return (
-								<>
-									{el.type === "profit" && (
-										<>
-											<div className={"item " + el.type}>
-												<div className="icon">
-													<img src={require("../../static-img/money/replenishment.svg").default} alt="" srcset="" />
-												</div>
-												<div className="info">
-													<div className="value">
-														<span>+</span>
-														{el.value}
-													</div>
-												</div>
-												<div className="date">{Intl.DateTimeFormat("ru-RU",{ dateStyle: 'short'} ).format(new Date(el.date))}</div>
-											</div>
-										</>
-									)}
-									{el.type !== "profit" && (
-										<>
-											<div className={"item " + el.type}>
-												<div className="icon">
-													<img src={require(`../../static-img/money/${el.type}.svg`)} alt="" srcset="" />
-												</div>
-												<div className="info">
-													<div className="owner">{el.owner}</div>
-													<div className="value">{el.value}</div>
-												</div>
-												<div className="date" onClick={()=>{document.getElementById('5').requestFullscreen()}} id="5">{Intl.DateTimeFormat("ru-RU",{ dateStyle: 'short'} ).format(new Date(el.date))}</div>
-											</div>
-										</>
-									)}
-								</>
-							);
-						})}
-					</div>
-				</div>
+		
 			</div>
 		</>
 	);

@@ -23,6 +23,7 @@ import Registration from "./components/_authentication/Registration";
 import Chat from "./components/_chat/Chat";
 import { useEffect } from "react";
 import Articles from "./components/_articles/Articles";
+import SaveUp from "./components/TEST/SaveUp";
 
 
 function App() {
@@ -103,10 +104,11 @@ function App() {
         <Route path="/user/info" element={ <><Header /> <DopUserPages /></>} />
         <Route path="/login" element={ <><Header /> <Login /></>} />
         <Route path="/registration" element={ <><Header /> <Registration /></>} />
-        <Route path="/chat" element={ <><Header /> <Chat /></>}/>
-        <Route path="/article/:id" element={<><Header /><Articles/><BottomHeader /> 	<BottomHeader /></>}/>
+        <Route path="/chat" element={ <><Header /> <Chat /><BottomHeader /></>}/>
+        <Route path="/article/:id" element={<><Header /><Articles/> 	<BottomHeader /></>}/>
         
         <Route path="*" element={ <><Header /> <NotFound /><BottomHeader /></>} />
+        <Route path="/savings" element={ <><Header /> <SaveUp /><BottomHeader /></>} />
         {/* <Route path="*" element={<Navigate to="/" /> <><Camera /></>}/> */}
       </Routes>
 
